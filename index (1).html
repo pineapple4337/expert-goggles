@@ -1,0 +1,1904 @@
+<!doctype html>
+<html lang="en-SG">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OpenJio | Admissions planning for Singapore families</title>
+<meta name="description" content="Keep your child's achievements together, explore schools and courses that suit them, and see what needs attention before the next application window.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,500;7..72,600;7..72,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FAF9F6;
+  --surface:#FFFFFF;
+  --ink:#172B4D;
+  --ink-2:#44546F;
+  --ink-3:#5E6C84;
+  --line:#E4E0D8;
+  --line-2:#D5D0C6;
+  --teal:#147D78;
+  --teal-dark:#0E5F5B;
+  --teal-bg:#E2F2F0;
+  --coral:#E88470;
+  --coral-ink:#A9452F;
+  --coral-bg:#FDEDE9;
+  --lav:#EEE9FA;
+  --lav-ink:#5641A0;
+  --butter:#FFF0B8;
+  --butter-ink:#6E5300;
+  --rule:#E9E4F5;
+  --focus:#2563EB;
+  --serif:"Literata", Georgia, "Times New Roman", serif;
+  --sans:"Public Sans", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --r-sm:8px; --r-md:12px; --r-lg:18px;
+  --shadow:0 12px 32px -18px rgba(23,43,77,.28);
+}
+*{box-sizing:border-box}
+[hidden]{display:none !important}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px;border-radius:6px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:600;letter-spacing:-.01em;margin:0;color:var(--ink)}
+h1{font-size:clamp(2.2rem,4.8vw,3.6rem);line-height:1.08}
+h2{font-size:clamp(1.65rem,3.1vw,2.4rem);line-height:1.15}
+h3{font-size:1.2rem;line-height:1.3}
+p{margin:0}
+.lede{font-size:1.1rem;color:var(--ink-2);max-width:60ch}
+.muted{color:var(--ink-3)}
+.small{font-size:.875rem}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+section{padding:88px 0;scroll-margin-top:64px}
+.head{max-width:700px;margin-bottom:40px}
+.head p{margin-top:12px}
+
+/* labels */
+.label{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:3px 10px;font-size:.78rem;font-weight:600;white-space:nowrap;line-height:1.4}
+.l-sample{background:#F1EFEA;color:var(--ink-3);border:1px dashed var(--line-2)}
+.l-partner{background:var(--butter);color:var(--butter-ink)}
+.l-ok{background:var(--teal-bg);color:var(--teal-dark)}
+.l-miss{background:var(--coral-bg);color:var(--coral-ink)}
+.l-route{background:var(--lav);color:var(--lav-ink)}
+.l-plain{background:#F1EFEA;color:var(--ink-2)}
+.stage-primary{--st:#E88470;--st-bg:#FDEDE9;--st-ink:#A9452F}
+.stage-secondary{--st:#147D78;--st-bg:#E2F2F0;--st-ink:#0E5F5B}
+.stage-post{--st:#7B66C9;--st-bg:#EEE9FA;--st-ink:#5641A0}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;border-radius:var(--r-sm);padding:10px 20px;font-weight:600;font-size:.98rem;border:1.5px solid transparent;text-decoration:none;transition:background .15s,border-color .15s,color .15s,box-shadow .15s;line-height:1.2}
+.btn-primary{background:var(--teal);color:#fff}
+.btn-primary:hover{background:var(--teal-dark)}
+.btn-ghost{background:var(--surface);color:var(--ink);border-color:var(--line-2)}
+.btn-ghost:hover{border-color:var(--ink);background:#fff}
+.btn-quiet{background:transparent;color:var(--ink);border-color:transparent;padding:10px 12px}
+.btn-quiet:hover{background:#F1EFEA}
+.btn-sm{min-height:38px;padding:7px 14px;font-size:.9rem}
+.btn[disabled]{opacity:.45;cursor:not-allowed}
+.linklike{background:none;border:0;padding:0;font-weight:600;color:var(--teal-dark);text-decoration:underline;text-underline-offset:3px}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:30;background:rgba(250,249,246,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand-mark{width:32px;height:32px;border-radius:10px;background:var(--ink);display:grid;place-items:center;position:relative}
+.brand-mark::after{content:"";width:12px;height:12px;border-radius:50%;border:3px solid var(--butter)}
+.brand-name{font-family:var(--serif);font-weight:700;font-size:1.22rem}
+.nav-links{display:flex;gap:26px;list-style:none;margin:0;padding:0}
+.nav-links a{text-decoration:none;color:var(--ink-2);font-weight:500;font-size:.95rem;padding:6px 0;border-bottom:2px solid transparent}
+.nav-links a:hover{color:var(--ink);border-bottom-color:var(--coral)}
+.nav-right{display:flex;align-items:center;gap:8px}
+.menu-btn{display:none;width:44px;height:44px;border-radius:var(--r-sm);border:1.5px solid var(--line-2);background:var(--surface);align-items:center;justify-content:center}
+.menu-btn span,.menu-btn span::before,.menu-btn span::after{display:block;width:18px;height:2px;background:var(--ink);border-radius:2px;position:relative;transition:transform .2s}
+.menu-btn span::before,.menu-btn span::after{content:"";position:absolute;left:0}
+.menu-btn span::before{top:-6px}.menu-btn span::after{top:6px}
+.menu-btn[aria-expanded="true"] span{background:transparent}
+.menu-btn[aria-expanded="true"] span::before{transform:translateY(6px) rotate(45deg)}
+.menu-btn[aria-expanded="true"] span::after{transform:translateY(-6px) rotate(-45deg)}
+.mobile-menu{display:none;border-top:1px solid var(--line);background:var(--bg)}
+.mobile-menu.open{display:block}
+.mobile-menu ul{list-style:none;margin:0;padding:8px 16px 16px}
+.mobile-menu a{display:block;padding:12px 4px;text-decoration:none;font-weight:600;border-bottom:1px solid var(--line)}
+
+/* hero */
+.hero{padding:64px 0 80px;position:relative;overflow:hidden;
+  background:repeating-linear-gradient(to bottom,transparent 0,transparent 33px,var(--rule) 33px,var(--rule) 34px)}
+.hero-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center}
+.hero h1{max-width:14ch}
+.hero .lede{margin-top:20px;max-width:46ch}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.hero-for{margin-top:28px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:.9rem;color:var(--ink-3)}
+.stage-dot{display:inline-flex;align-items:center;gap:6px;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:4px 10px;font-weight:600;color:var(--ink-2)}
+.stage-dot::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--st)}
+
+.pile-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--shadow);overflow:hidden}
+.pile-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 18px;border-bottom:1px solid var(--line)}
+.pile-title{font-weight:700;font-size:.95rem}
+.seg{display:inline-flex;background:#F1EFEA;border-radius:999px;padding:3px}
+.seg button{border:0;background:transparent;padding:7px 14px;min-height:34px;border-radius:999px;font-size:.85rem;font-weight:600;color:var(--ink-3);white-space:nowrap}
+.seg button[aria-pressed="true"]{background:var(--surface);color:var(--ink);box-shadow:0 1px 3px rgba(23,43,77,.18)}
+.pile{position:relative;height:400px;background:linear-gradient(180deg,#FFFDF7,#FFF8E6)}
+.pile.sorted{background:#FCFBF8}
+.pile-head{position:absolute;left:5%;right:5%;top:16px;display:flex;justify-content:space-between;align-items:center;opacity:0;transition:opacity .4s .5s}
+.pile-head strong{font-family:var(--serif);font-size:1.05rem}
+.pile.sorted .pile-head{opacity:1}
+.chip{position:absolute;left:var(--sx);top:var(--sy);width:72%;transform:rotate(var(--sr));
+  transition:left .7s cubic-bezier(.6,.05,.25,1),top .7s cubic-bezier(.6,.05,.25,1),transform .7s cubic-bezier(.6,.05,.25,1),width .7s,box-shadow .4s;transition-delay:calc(var(--i)*60ms);
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);padding:10px 12px;display:flex;gap:10px;align-items:center;box-shadow:0 8px 18px -10px rgba(23,43,77,.35)}
+.pile.sorted .chip{left:5%;top:calc(58px + var(--i)*62px);transform:rotate(0);width:90%;box-shadow:none}
+.chip-ico{width:34px;height:34px;border-radius:9px;display:grid;place-items:center;flex:none;font-size:.68rem;font-weight:700}
+.chip-body{min-width:0;flex:1}
+.chip-t,.chip-s{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.chip-t{font-weight:600;font-size:.9rem}
+.chip-s{font-size:.78rem;color:var(--ink-3)}
+.chip .dst{display:none}
+.pile.sorted .chip .src{display:none}
+.pile.sorted .chip .dst{display:block}
+.chip .label{opacity:0;transition:opacity .3s .6s}
+.pile.sorted .chip .label{opacity:1}
+
+/* familiar */
+.familiar{background:var(--lav)}
+.familiar-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}
+.moments{list-style:none;margin:0;padding:0}
+.moments li{display:grid;grid-template-columns:44px 1fr;gap:16px;padding:18px 0;border-bottom:1px solid #D9D0F0}
+.moments li:first-child{padding-top:0}
+.moment-ico{width:44px;height:44px;border-radius:12px;background:var(--surface);display:grid;place-items:center;font-size:1.25rem}
+.moments p{font-size:1.04rem}
+.familiar .close{margin-top:24px;font-family:var(--serif);font-size:1.3rem;line-height:1.35;max-width:30ch}
+
+/* how */
+.how-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;list-style:none;margin:0;padding:0}
+.how-steps li{border-top:3px solid var(--st,var(--teal));padding-top:20px}
+.how-n{font-family:var(--serif);font-weight:700;font-size:1rem;color:var(--ink-3)}
+.how-steps h3{margin:6px 0 8px}
+.how-steps p{color:var(--ink-2)}
+
+/* planner */
+#planner{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.planner-top{margin-bottom:28px}
+.av{width:44px;height:44px;border-radius:50%;background:var(--st-bg);color:var(--st-ink);display:grid;place-items:center;font-weight:700;flex:none;border:2px solid var(--st)}
+
+.stepper{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;list-style:none;margin:0 0 6px;padding:0}
+.stepbtn{width:100%;display:flex;align-items:center;gap:12px;text-align:left;background:var(--bg);border:1.5px solid var(--line);border-radius:var(--r-md);padding:12px 14px;min-height:56px}
+.stepbtn:hover{border-color:var(--line-2)}
+.stepbtn .n{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:.85rem;border:1.5px solid var(--line-2);color:var(--ink-3);flex:none;background:var(--surface)}
+.stepbtn .t{font-weight:600;font-size:.95rem;line-height:1.2}
+.stepbtn[aria-current="step"]{border-color:var(--teal);background:var(--surface);box-shadow:inset 0 0 0 1px var(--teal)}
+.stepbtn[aria-current="step"] .n{background:var(--teal);border-color:var(--teal);color:#fff}
+.stepbtn.done .n{background:var(--teal-bg);border-color:var(--teal);color:var(--teal-dark)}
+.step-mobile{display:none;margin-bottom:6px}
+.step-mobile p{font-weight:700}
+.step-mobile .bar{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:8px}
+.step-mobile .bar span{height:6px;border-radius:3px;background:var(--line)}
+.step-mobile .bar span.on{background:var(--teal)}
+
+.stage-band{height:6px;border-radius:3px;background:var(--st);margin:18px 0 24px;transition:background .3s}
+.panel{display:none}
+.panel.active{display:block;animation:fadein .25s ease}
+@keyframes fadein{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.panel-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:32px;align-items:start}
+.step-nav{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:32px;padding-top:20px;border-top:1px solid var(--line)}
+.step-nav .count{color:var(--ink-3);font-size:.9rem}
+
+/* step 1 */
+.ptiles{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.ptile{text-align:left;background:var(--surface);border:1.5px solid var(--line-2);border-radius:var(--r-lg);padding:20px;display:flex;flex-direction:column;gap:10px;transition:border-color .15s,box-shadow .15s,background .15s;position:relative}
+.ptile:hover{border-color:var(--st)}
+.ptile[aria-pressed="true"]{border-color:var(--st);background:var(--st-bg);box-shadow:inset 0 0 0 1px var(--st)}
+.ptile .row{display:flex;gap:12px;align-items:center}
+.ptile strong{font-family:var(--serif);font-size:1.15rem;display:block}
+.ptile .stage{font-size:.85rem;color:var(--st-ink);font-weight:700}
+.ptile p{font-size:.93rem;color:var(--ink-2)}
+.ptile .tick{position:absolute;top:14px;right:14px;width:24px;height:24px;border-radius:50%;background:var(--st);color:#fff;display:none;place-items:center;font-size:.8rem;font-weight:700}
+.ptile[aria-pressed="true"] .tick{display:grid}
+.journey{margin-top:24px;background:var(--bg);border-radius:var(--r-lg);padding:20px 22px;display:flex;gap:16px;flex-wrap:wrap;align-items:center;justify-content:space-between}
+.journey p{color:var(--ink-2);max-width:62ch}
+
+/* record */
+.rec-head{display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding-bottom:18px;border-bottom:1px solid var(--line)}
+.rec-head .who{flex:1;min-width:200px}
+.rec-head .who strong{font-family:var(--serif);font-size:1.25rem;display:inline-block;margin-right:8px}
+.rec-head .who span.small{display:block;color:var(--ink-2)}
+.rec-tools{display:flex;gap:8px;flex-wrap:wrap}
+.filters{display:flex;flex-wrap:wrap;gap:6px;margin:16px 0 4px}
+.filter{border:1.5px solid var(--line-2);background:var(--surface);border-radius:999px;padding:6px 13px;min-height:36px;font-size:.86rem;font-weight:500}
+.filter:hover{border-color:var(--ink-3)}
+.filter[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.rec-list{list-style:none;margin:0;padding:0}
+.rec{display:grid;grid-template-columns:58px 1fr;gap:14px;padding:16px 0;border-bottom:1px solid var(--line);transition:background .3s}
+.rec.flash{background:#F2FAF8}
+.rec-year{font-family:var(--serif);font-weight:600;color:var(--ink-3);padding-top:2px}
+.rec-title{font-weight:600}
+.rec-note{font-size:.88rem;color:var(--ink-3)}
+.rec-meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.rec-actions{display:flex;flex-wrap:wrap;gap:4px 16px;margin-top:8px;align-items:center}
+.act{background:none;border:0;padding:6px 0;font-weight:600;font-size:.88rem;color:var(--teal-dark);text-decoration:underline;text-underline-offset:3px;min-height:36px}
+.act.danger{color:var(--ink-3)}
+.act.danger:hover{color:var(--coral-ink)}
+.act.attach{color:var(--coral-ink)}
+.empty{padding:28px 0;color:var(--ink-2)}
+.aside{background:var(--bg);border-radius:var(--r-lg);padding:22px;border:1px solid var(--line)}
+.aside h3{font-size:1.05rem;margin-bottom:10px}
+.aside p{font-size:.93rem;color:var(--ink-2)}
+.aside p + p{margin-top:10px}
+.stat-row{display:flex;gap:10px;margin:4px 0 16px}
+.stat{flex:1;background:var(--surface);border-radius:var(--r-md);padding:12px;border:1px solid var(--line)}
+.stat b{display:block;font-family:var(--serif);font-size:1.5rem}
+.stat span{font-size:.8rem;color:var(--ink-3)}
+.stat.miss b{color:var(--coral-ink)}
+.stat.ok b{color:var(--teal-dark)}
+
+/* explore */
+.explore{display:grid;grid-template-columns:.9fr 1.1fr;gap:28px;align-items:start}
+.olist{list-style:none;margin:0;padding:0;border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden}
+.obtn{width:100%;text-align:left;background:var(--surface);border:0;border-bottom:1px solid var(--line);padding:14px 16px;display:grid;grid-template-columns:1fr auto;gap:4px 12px;align-items:center;min-height:64px}
+.olist li:last-child .obtn{border-bottom:0}
+.obtn:hover{background:var(--bg)}
+.obtn[aria-pressed="true"]{background:var(--st-bg);box-shadow:inset 4px 0 0 var(--st)}
+.obtn .nm{font-weight:600}
+.obtn .sub{font-size:.82rem;color:var(--ink-3);grid-column:1}
+.obtn .on{grid-row:1 / span 2;grid-column:2}
+.odetail{border:1px solid var(--line);border-radius:var(--r-lg);padding:24px;background:var(--surface)}
+.odetail h3{font-size:1.35rem}
+.odetail .labels{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 16px}
+.odetail h4{font-family:var(--sans);font-size:.9rem;font-weight:700;margin:18px 0 6px}
+.odetail ul{margin:0;padding:0;list-style:none}
+.odetail li{padding:7px 0;border-top:1px solid var(--line);font-size:.94rem;display:flex;gap:10px;justify-content:space-between;align-items:center;flex-wrap:wrap}
+.why{background:var(--bg);border-radius:var(--r-md);padding:12px 14px;color:var(--ink-2);font-size:.95rem}
+.odetail li.check-li{justify-content:flex-start;flex-wrap:nowrap}
+.check-li::before{content:"?";flex:none;width:22px;height:22px;border-radius:50%;background:var(--lav);color:var(--lav-ink);display:grid;place-items:center;font-size:.75rem;font-weight:700}
+.odetail .btn{margin-top:20px}
+.shortlist{margin-top:28px;border-top:1px solid var(--line);padding-top:22px}
+.shortlist h3{font-size:1.1rem}
+.sl-items{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+.sl-item{display:flex;align-items:center;gap:10px;background:var(--bg);border:1px solid var(--line-2);border-radius:var(--r-md);padding:6px 6px 6px 12px}
+.sl-item label{display:flex;gap:8px;align-items:center;font-size:.88rem;cursor:pointer;min-height:36px}
+.sl-item input{width:18px;height:18px;accent-color:var(--teal)}
+.sl-item b{font-weight:600;font-size:.92rem}
+.x{border:0;background:none;width:36px;height:36px;border-radius:8px;color:var(--ink-3);font-size:1.2rem;line-height:1}
+.x:hover{background:var(--coral-bg);color:var(--coral-ink)}
+.cmp{margin-top:18px;overflow-x:auto;border:1px solid var(--line);border-radius:var(--r-lg);animation:fadein .25s ease}
+.cmp table{width:100%;border-collapse:collapse;min-width:560px;font-size:.92rem}
+.cmp th,.cmp td{padding:12px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+.cmp thead th{background:var(--lav);font-family:var(--serif);font-size:1rem}
+.cmp tbody th{width:22%;color:var(--ink-2);font-weight:600}
+.cmp tr:last-child th,.cmp tr:last-child td{border-bottom:0}
+.cmp ul{margin:0;padding-left:18px}
+
+/* plan */
+.progress{background:var(--bg);border:1px solid var(--line);border-radius:var(--r-lg);padding:18px 20px;margin-bottom:10px}
+.progress-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.progress-top b{font-family:var(--serif);font-size:1.3rem}
+.pbar{height:10px;background:var(--line);border-radius:5px;margin:10px 0 8px;overflow:hidden}
+.pbar span{display:block;height:100%;background:var(--teal);border-radius:5px;transition:width .35s ease}
+.tasks{list-style:none;margin:0;padding:0}
+.task{display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.task input{appearance:none;-webkit-appearance:none;width:26px;height:26px;border:2px solid var(--line-2);border-radius:7px;flex:none;margin:0;display:grid;place-items:center;background:var(--surface);cursor:pointer;transition:background .15s,border-color .15s}
+.task input:hover{border-color:var(--teal)}
+.task input:checked{background:var(--teal);border-color:var(--teal)}
+.task input:checked::after{content:"";width:6px;height:11px;border:solid #fff;border-width:0 2.5px 2.5px 0;transform:rotate(45deg) translate(-1px,-1px)}
+.task label{cursor:pointer;flex:1;min-width:200px}
+.task .tt{font-weight:600;display:block}
+.task.done .tt{text-decoration:line-through;color:var(--ink-3)}
+.task .th{font-size:.88rem;color:var(--ink-3);display:block;margin-top:2px}
+.task .src{flex:none;margin-left:40px}
+@media (min-width:721px){.task .src{margin-left:auto}}
+.plan-empty{background:var(--butter);border-radius:var(--r-md);padding:14px 16px;margin-top:14px;font-size:.94rem;color:var(--butter-ink)}
+.milestones{list-style:none;margin:0;padding:0}
+.milestones li{position:relative;padding:0 0 18px 24px}
+.milestones li::before{content:"";position:absolute;left:4px;top:7px;width:10px;height:10px;border-radius:50%;background:var(--st)}
+.milestones li::after{content:"";position:absolute;left:8px;top:20px;bottom:0;width:2px;background:var(--line)}
+.milestones li:last-child::after{display:none}
+.milestones b{display:block;font-size:.9rem}
+.milestones span{font-size:.92rem;color:var(--ink-2)}
+.history{background:var(--butter);color:var(--butter-ink);border-radius:var(--r-md);padding:12px 14px;font-size:.88rem;margin-top:6px}
+.offlink{display:inline-block;margin-top:12px;font-weight:600;color:var(--teal-dark);font-size:.92rem}
+
+/* checkins */
+.checkins{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+.ck{padding:24px;border-radius:var(--r-lg);border:1px solid var(--line);background:var(--surface)}
+.ck.junior{border-top:4px solid var(--teal)}
+.ck.senior{border-top:4px solid #7B66C9}
+.ck h3{margin-bottom:6px}
+.ck .who{color:var(--ink-2);font-size:.95rem}
+.ck ul{margin:14px 0 0;padding-left:20px;color:var(--ink-2);font-size:.95rem}
+.ck li{margin:4px 0}
+.ck-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:24px}
+.oneoff-line{margin-top:28px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;background:var(--butter);border-radius:var(--r-lg);padding:18px 22px;transition:box-shadow .25s}
+.oneoff-line p{color:var(--butter-ink)}
+.oneoff-line strong{color:var(--ink)}
+.oneoff-line.hl{box-shadow:inset 0 0 0 2px var(--teal)}
+details.cover{margin-top:20px;border:1px solid var(--line);border-radius:var(--r-md);background:var(--surface)}
+details.cover summary{cursor:pointer;padding:14px 18px;font-weight:600;list-style:none;display:flex;justify-content:space-between;min-height:44px;align-items:center}
+details.cover summary::-webkit-details-marker{display:none}
+details.cover summary::after{content:"+";font-size:1.3rem;line-height:1;color:var(--ink-3)}
+details.cover[open] summary::after{content:"\2212"}
+details.cover .in{padding:0 18px 18px;color:var(--ink-2);font-size:.95rem}
+
+/* directory */
+.dir-filters{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:22px}
+.dir-filters label{display:block;font-weight:700;font-size:.88rem;margin-bottom:6px}
+.dir-filters select{width:100%;min-height:44px;padding:8px 12px;border:1.5px solid var(--line-2);border-radius:var(--r-sm);background:var(--surface)}
+.dir-filters select:focus{border-color:var(--teal);outline:none;box-shadow:0 0 0 3px #CBE7E4}
+.dir-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.dir-item{display:grid;grid-template-columns:auto 1fr auto;gap:16px;padding:18px 0;border-bottom:1px solid var(--line);align-items:start;animation:fadein .2s ease}
+.dir-ico{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;font-size:1.2rem;background:var(--teal-bg)}
+.dir-ico.paid{background:var(--lav)}
+.dir-item h3{font-family:var(--sans);font-size:1rem;font-weight:700}
+.dir-item .labels{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}
+.dir-item .whyline{font-size:.9rem;color:var(--ink-2)}
+.dir-item .cost{font-weight:700;text-align:right;white-space:nowrap}
+.dir-item .cost small{display:block;font-weight:400;color:var(--ink-3);font-size:.8rem}
+.dir-note{margin-top:18px;font-size:.92rem;color:var(--ink-2);display:flex;gap:10px;align-items:flex-start}
+
+/* pricing */
+.helpwant{background:var(--lav);border-radius:var(--r-lg);padding:24px;margin-bottom:28px}
+.helpwant .q{font-weight:700;margin-bottom:12px;display:block}
+.hw-opts{display:flex;flex-wrap:wrap;gap:8px}
+.hw{border:1.5px solid #D2C8EE;background:var(--surface);border-radius:var(--r-sm);padding:10px 14px;min-height:44px;font-size:.93rem;text-align:left}
+.hw:hover{border-color:var(--lav-ink)}
+.hw[aria-pressed="true"]{border-color:var(--lav-ink);box-shadow:inset 0 0 0 1px var(--lav-ink);background:#F8F6FD}
+.hw-out{margin-top:14px;font-size:.98rem;min-height:1.5em}
+.hw-out strong{color:var(--lav-ink)}
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;background:var(--surface)}
+.plan{padding:26px 24px;display:flex;flex-direction:column;border-right:1px solid var(--line);transition:background .25s,box-shadow .25s}
+.plan:last-child{border-right:0}
+.plan.hl{background:#F2FAF8;box-shadow:inset 0 0 0 2px var(--teal)}
+.plan-name{font-family:var(--serif);font-size:1.3rem;font-weight:600}
+.plan-for{color:var(--ink-3);font-size:.9rem}
+.price{font-family:var(--serif);font-size:2.2rem;font-weight:700;margin-top:14px;line-height:1}
+.price small{font-family:var(--sans);font-size:.88rem;font-weight:400;color:var(--ink-3)}
+.prow{margin:16px 0 0;font-size:.93rem}
+.prow dt{font-size:.8rem;color:var(--ink-3);font-weight:600}
+.prow dd{margin:2px 0 10px}
+.plan details{margin:4px 0 20px;flex:1}
+.plan summary{cursor:pointer;font-weight:600;color:var(--teal-dark);font-size:.92rem;padding:8px 0;list-style:none;min-height:40px}
+.plan summary::-webkit-details-marker{display:none}
+.plan summary::before{content:"+\00a0"}
+.plan details[open] summary::before{content:"\2212\00a0"}
+.plan details ul{margin:6px 0 0;padding-left:18px;font-size:.9rem;color:var(--ink-2)}
+.plan details li{margin:4px 0}
+.plan .btn{width:100%}
+.pro-strip{margin-top:28px;border:1px solid var(--line);border-radius:var(--r-lg);padding:24px;background:var(--surface)}
+.pro-strip h3{font-size:1.1rem}
+.strip{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:20px;position:relative}
+.strip::before{content:"";position:absolute;left:16%;right:16%;top:15px;height:3px;background:var(--teal-bg)}
+.strip > div{position:relative;text-align:center;padding:0 12px}
+.strip .pin{width:32px;height:32px;border-radius:50%;background:var(--teal);color:#fff;display:grid;place-items:center;margin:0 auto 10px;font-weight:700;font-size:.85rem;position:relative}
+.strip b{display:block;font-size:.95rem}
+.strip span span{font-size:.88rem;color:var(--ink-2)}
+.strip-foot{margin-top:18px;padding-top:14px;border-top:1px dashed var(--line-2);font-size:.92rem;color:var(--ink-2)}
+
+/* compare */
+.alt{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r-lg);background:var(--surface)}
+.alt table{border-collapse:collapse;width:100%;min-width:720px;font-size:.93rem}
+.alt th,.alt td{padding:14px 16px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+.alt thead th{background:#F5F3EE}
+.alt thead th.us{background:var(--teal);color:#fff}
+.alt tbody th{font-weight:600;width:24%}
+.alt td.us{background:#F2FAF8;font-weight:600;color:var(--teal-dark)}
+.alt tr:last-child th,.alt tr:last-child td{border-bottom:0}
+.no{color:var(--coral-ink)}
+
+/* faq */
+.faq{max-width:780px}
+.faq details{border-top:1px solid var(--line)}
+.faq details:last-child{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;padding:18px 0;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:16px;min-height:44px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-size:1.4rem;line-height:1;color:var(--ink-3)}
+.faq details[open] summary::after{content:"\2212"}
+.faq details p{padding:0 0 18px;color:var(--ink-2);max-width:66ch}
+
+/* final + footer */
+.final{background:var(--ink);color:#fff;padding:72px 0}
+.final h2{color:#fff;max-width:22ch}
+.final p{color:#C9D2E3;margin-top:12px;max-width:52ch}
+.final .btn{margin-top:24px;background:var(--butter);color:var(--ink)}
+.final .btn:hover{background:#fff}
+footer{padding:48px 0 40px;border-top:1px solid var(--line)}
+.foot{display:grid;grid-template-columns:1.4fr repeat(4,1fr);gap:32px}
+.foot p{color:var(--ink-3);font-size:.92rem;margin-top:10px;max-width:34ch}
+.foot h4{font-family:var(--sans);font-size:.88rem;font-weight:700;margin-bottom:10px}
+.foot ul{list-style:none;margin:0;padding:0}
+.foot li{margin:6px 0}
+.foot a{text-decoration:none;color:var(--ink-2);font-size:.92rem}
+.foot a:hover{color:var(--teal-dark);text-decoration:underline}
+.copy{margin-top:36px;padding-top:18px;border-top:1px solid var(--line);font-size:.85rem;color:var(--ink-3)}
+
+/* dialogs and toast */
+dialog{border:0;border-radius:var(--r-lg);padding:0;max-width:520px;width:calc(100% - 32px);box-shadow:0 30px 60px -20px rgba(23,43,77,.5);color:var(--ink)}
+dialog::backdrop{background:rgba(23,43,77,.5)}
+dialog[open]{animation:fadein .2s ease}
+.dlg{padding:26px}
+.dlg-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.dlg h3{font-size:1.35rem}
+.field{margin-top:16px}
+.field label,.field .flabel{display:block;font-weight:600;font-size:.9rem;margin-bottom:6px}
+.field input[type=text],.field select{width:100%;min-height:44px;padding:9px 12px;border:1.5px solid var(--line-2);border-radius:var(--r-sm);background:#fff}
+.field input:focus,.field select:focus{border-color:var(--teal);outline:none;box-shadow:0 0 0 3px #CBE7E4}
+.radios{display:flex;flex-direction:column;gap:8px}
+.radios label{display:flex;gap:10px;align-items:center;font-weight:400;cursor:pointer;min-height:36px}
+.radios input{width:18px;height:18px;accent-color:var(--teal)}
+.err{color:var(--coral-ink);font-size:.85rem;margin-top:6px;display:none}
+.dlg-foot{display:flex;justify-content:flex-end;gap:10px;margin-top:24px;flex-wrap:wrap}
+.cert{margin-top:18px;border:2px solid #E7D9A8;background:linear-gradient(#FFFDF4,#FFF8DF);border-radius:var(--r-md);padding:28px 22px;text-align:center;position:relative;overflow:hidden}
+.cert::before{content:"";position:absolute;inset:8px;border:1px solid #EADFB8;border-radius:8px;pointer-events:none}
+.cert .org{font-size:.8rem;font-weight:700;color:var(--butter-ink)}
+.cert h4{font-size:1.25rem;margin:10px 0 6px}
+.cert .to{font-size:.9rem;color:var(--ink-2)}
+.cert .wm{position:absolute;right:-34px;top:18px;transform:rotate(30deg);background:var(--coral);color:#fff;font-size:.72rem;font-weight:700;padding:4px 40px}
+.agenda{list-style:none;margin:16px 0 0;padding:0;counter-reset:ag}
+.agenda li{counter-increment:ag;display:grid;grid-template-columns:30px 1fr;gap:10px;padding:10px 0;border-top:1px solid var(--line)}
+.agenda li::before{content:counter(ag);width:26px;height:26px;border-radius:50%;background:var(--teal-bg);color:var(--teal-dark);display:grid;place-items:center;font-weight:700;font-size:.85rem}
+.agenda b{display:block;font-size:.95rem}
+.agenda span span{font-size:.9rem;color:var(--ink-2)}
+.takeaway{margin-top:16px;background:var(--butter);border-radius:var(--r-md);padding:14px 16px;font-size:.93rem;color:var(--butter-ink)}
+.takeaway b{color:var(--ink)}
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,16px);background:var(--ink);color:#fff;padding:10px 10px 10px 18px;border-radius:var(--r-md);font-size:.93rem;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:60;display:flex;gap:12px;align-items:center;width:max-content;max-width:calc(100% - 32px);box-shadow:var(--shadow);min-height:48px}
+.toast.show{opacity:1;transform:translate(-50%,0);pointer-events:auto}
+.toast button{background:var(--butter);color:var(--ink);border:0;border-radius:6px;padding:8px 14px;font-weight:700;min-height:36px;flex:none}
+.toast button[hidden]{display:none}
+
+/* upload reader */
+.upload{margin-top:16px;background:var(--surface);border:1.5px dashed var(--line-2);border-radius:var(--r-lg);padding:18px}
+.upload h3{font-size:1.05rem;margin-bottom:4px}
+.upload .row{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.upload input[type=file]{position:absolute;width:1px;height:1px;opacity:0}
+.up-status{margin-top:12px;font-size:.9rem;color:var(--ink-2);min-height:1.4em}
+.up-prog{height:6px;background:var(--line);border-radius:3px;overflow:hidden;margin-top:8px;display:none}
+.up-prog span{display:block;height:100%;width:0;background:var(--teal);transition:width .2s}
+.up-result{margin-top:14px;display:none}
+.up-result.show{display:block;animation:fadein .25s ease}
+.up-thumb{width:100%;max-height:160px;object-fit:contain;border-radius:var(--r-sm);border:1px solid var(--line);background:#fff}
+.up-fields{margin-top:12px}
+.up-fields .field{margin-top:10px}
+.fb{list-style:none;margin:12px 0 0;padding:0}
+.fb li{display:flex;gap:8px;font-size:.9rem;padding:6px 0;border-top:1px solid var(--line)}
+.fb .mk{flex:none;width:18px;font-weight:700}
+.fb .y{color:var(--teal-dark)} .fb .n{color:var(--coral-ink)}
+.unlock{margin-top:14px;font-size:.88rem;color:var(--ink-2)}
+.unlock .bar{height:6px;background:var(--line);border-radius:3px;margin-top:6px;overflow:hidden}
+.unlock .bar span{display:block;height:100%;background:var(--coral);transition:width .3s}
+
+/* tuition directory */
+.dir-filters.four{grid-template-columns:repeat(3,1fr)}
+.subj{display:flex;flex-wrap:wrap;gap:5px;margin:6px 0}
+.subj span{font-size:.78rem;padding:2px 8px;border-radius:999px;background:#F1EFEA;color:var(--ink-2)}
+.subj span.hit{background:var(--teal-bg);color:var(--teal-dark);font-weight:700}
+.branches{font-size:.88rem;color:var(--ink-2)}
+.dir-item .site{font-size:.88rem;font-weight:600;color:var(--teal-dark);white-space:nowrap}
+.dir-count{font-size:.9rem;color:var(--ink-3);margin-bottom:6px}
+.more{margin-top:14px}
+
+/* notes library */
+.notes-lock{background:var(--lav);border-radius:var(--r-lg);padding:24px;display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center}
+.notes-lock .unlock{margin-top:10px}
+.notes-list{list-style:none;margin:18px 0 0;padding:0;border-top:1px solid var(--line)}
+.note{display:grid;grid-template-columns:auto 1fr auto;gap:14px;padding:14px 0;border-bottom:1px solid var(--line);align-items:center}
+.note-ico{width:40px;height:40px;border-radius:10px;background:var(--butter);display:grid;place-items:center;font-size:1.1rem}
+.note h3{font-family:var(--sans);font-size:.98rem;font-weight:700}
+.note .meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+.rules{margin-top:18px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);padding:14px 16px;font-size:.92rem;color:var(--ink-2)}
+.rules b{color:var(--ink)}
+
+/* cadence */
+.cadence{margin-top:20px;display:grid;gap:14px}
+.cad-row{display:grid;grid-template-columns:90px 1fr auto;gap:14px;align-items:center}
+.cad-row b{font-size:.95rem}
+.dots{display:grid;grid-template-columns:repeat(12,1fr);gap:6px}
+.dots span{height:14px;border-radius:4px;background:var(--line)}
+.dots span.on{background:var(--teal)}
+.dots.senior span.on{background:#7B66C9}
+.cad-row small{color:var(--ink-3);font-size:.85rem;white-space:nowrap}
+.months{display:grid;grid-template-columns:90px 1fr auto;gap:14px;font-size:.75rem;color:var(--ink-3)}
+.months div{display:grid;grid-template-columns:repeat(12,1fr);gap:6px;text-align:center}
+
+/* responsive */
+@media (max-width:980px){
+  .notes-lock{grid-template-columns:1fr}
+  .hero-grid,.panel-grid,.explore,.familiar-grid,.checkins{grid-template-columns:1fr}
+  .ptiles{grid-template-columns:1fr}
+  .plans{grid-template-columns:1fr}
+  .plan{border-right:0;border-bottom:1px solid var(--line)}
+  .plan:last-child{border-bottom:0}
+  .nav-links,.nav-cta{display:none}
+  .menu-btn{display:inline-flex}
+  .foot{grid-template-columns:1fr 1fr}
+}
+@media (max-width:720px){
+  body{font-size:16px}
+  .wrap{padding:0 16px}
+  section{padding:64px 0}
+  .hero{padding:40px 0 56px}
+  .hero h1{max-width:none}
+  .how-steps{grid-template-columns:1fr;gap:24px}
+  .stepper{display:none}
+  .step-mobile{display:block}
+  .dir-filters{grid-template-columns:1fr}
+  .dir-item{grid-template-columns:auto 1fr}
+  .dir-item .cost{grid-column:2;text-align:left}
+  .strip{grid-template-columns:1fr;gap:16px}
+  .strip::before{display:none}
+  .strip > div{display:grid;grid-template-columns:32px 1fr;gap:12px;text-align:left;padding:0}
+  .strip .pin{margin:0}
+  .pile{height:390px}
+  .chip{width:80%}
+  .step-nav .count{display:none}
+  .step-nav .btn{flex:1}
+  .foot{grid-template-columns:1fr}
+  .stat-row{gap:6px}
+  .dir-filters.four{grid-template-columns:1fr}
+  .dir-item .site{grid-column:2}
+  .note{grid-template-columns:auto 1fr}
+  .note .btn{grid-column:2;justify-self:start}
+  .cad-row,.months{grid-template-columns:60px 1fr}
+  .cad-row small{grid-column:2}
+  .months > span:last-child{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition:none !important;animation:none !important}
+}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="OpenJio, back to top">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-name">OpenJio</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#how">How it works</a></li>
+      <li><a href="#planner">Sample planner</a></li>
+      <li><a href="#checkins">Check-ins</a></li>
+      <li><a href="#centres">Tuition</a></li>
+      <li><a href="#notes">Notes</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <div class="nav-right">
+      <a class="btn btn-primary btn-sm nav-cta" href="#planner">Try the sample planner</a>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu"><span></span></button>
+    </div>
+  </div>
+  <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile">
+    <ul>
+      <li><a href="#how">How it works</a></li>
+      <li><a href="#planner">Sample planner</a></li>
+      <li><a href="#checkins">Check-ins</a></li>
+      <li><a href="#centres">Tuition</a></li>
+      <li><a href="#notes">Notes</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero" aria-labelledby="hero-h">
+  <div class="wrap hero-grid">
+    <div>
+      <h1 id="hero-h">A clearer plan for your child's next school.</h1>
+      <p class="lede">Keep certificates and achievements in one place, find schools that suit what your child already does, and see what needs doing before the next application window.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="#planner">Try the sample planner</a>
+        <a class="btn btn-ghost" href="#how">See how it works</a>
+      </div>
+      <div class="hero-for">
+        <span>Starting with DSA-Sec, then every step after:</span>
+        <span class="stage-dot stage-primary">P4 to P6</span>
+        <span class="stage-dot stage-secondary">Secondary</span>
+        <span class="stage-dot stage-post">JC, poly and NS</span>
+      </div>
+    </div>
+
+    <div class="pile-card">
+      <div class="pile-bar">
+        <span class="pile-title">Where's that certificate?</span>
+        <div class="seg" role="group" aria-label="Choose a view">
+          <button type="button" id="btnScatter" aria-pressed="true">Scattered</button>
+          <button type="button" id="btnSort" aria-pressed="false">In OpenJio</button>
+        </div>
+      </div>
+      <div class="pile" id="pile">
+        <div class="pile-head"><strong>Xiao Ming, Primary 5</strong><span class="label l-sample">Sample</span></div>
+        <div class="chip" style="--i:0;--sx:6%;--sy:22px;--sr:-4deg">
+          <span class="chip-ico" style="background:#E2F2F0;color:#0E5F5B">IMG</span>
+          <span class="chip-body">
+            <span class="src"><span class="chip-t">IMG_4521.jpg</span><span class="chip-s">Photo of a certificate in the family WhatsApp chat</span></span>
+            <span class="dst"><span class="chip-t">National robotics competition, Gold</span><span class="chip-s">STEM and robotics, 2026</span></span>
+          </span>
+          <span class="label l-ok">Proof attached</span>
+        </div>
+        <div class="chip" style="--i:1;--sx:22%;--sy:96px;--sr:3deg">
+          <span class="chip-ico" style="background:#EEE9FA;color:#5641A0">PDF</span>
+          <span class="chip-body">
+            <span class="src"><span class="chip-t">Fwd: Fwd: results (final).pdf</span><span class="chip-s">Somewhere in Mum's inbox</span></span>
+            <span class="dst"><span class="chip-t">Maths olympiad (junior), Bronze</span><span class="chip-s">Maths, 2025</span></span>
+          </span>
+          <span class="label l-ok">Proof attached</span>
+        </div>
+        <div class="chip" style="--i:2;--sx:3%;--sy:172px;--sr:-2deg">
+          <span class="chip-ico" style="background:#FFF0B8;color:#6E5300">DOC</span>
+          <span class="chip-body">
+            <span class="src"><span class="chip-t">Letter from the CCA teacher</span><span class="chip-s">In a drawer, probably</span></span>
+            <span class="dst"><span class="chip-t">Infocomm club vice-captain</span><span class="chip-s">Leadership, 2026</span></span>
+          </span>
+          <span class="label l-ok">Proof attached</span>
+        </div>
+        <div class="chip" style="--i:3;--sx:20%;--sy:248px;--sr:5deg">
+          <span class="chip-ico" style="background:#FDEDE9;color:#A9452F">?</span>
+          <span class="chip-body">
+            <span class="src"><span class="chip-t">Wushu medal</span><span class="chip-s">On the shelf. Certificate never came home</span></span>
+            <span class="dst"><span class="chip-t">Inter-school wushu competition</span><span class="chip-s">Sports, 2025</span></span>
+          </span>
+          <span class="label l-miss">Proof missing</span>
+        </div>
+        <div class="chip" style="--i:4;--sx:8%;--sy:324px;--sr:-3deg">
+          <span class="chip-ico" style="background:#F1EFEA;color:#44546F">TXT</span>
+          <span class="chip-body">
+            <span class="src"><span class="chip-t">"DSA opens in May??"</span><span class="chip-s">Message from another parent, a week too late</span></span>
+            <span class="dst"><span class="chip-t">Review application dates</span><span class="chip-s">Added to the plan as a reminder</span></span>
+          </span>
+          <span class="label l-route">Reminder</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAMILIAR -->
+<section class="familiar" aria-labelledby="fam-h">
+  <div class="wrap familiar-grid">
+    <div>
+      <h2 id="fam-h">Sound familiar?</h2>
+      <p class="lede" style="margin-top:12px">DSA information is easy to find online. Keeping track of your own child is the hard part.</p>
+      <p class="close">OpenJio keeps it all in one place, so you spend less time hunting and more time deciding.</p>
+    </div>
+    <ul class="moments">
+      <li><span class="moment-ico" aria-hidden="true">💬</span><p>The robotics certificate is somewhere in the family WhatsApp chat, two years up.</p></li>
+      <li><span class="moment-ico" aria-hidden="true">📅</span><p>You hear about the application window from another parent, a week before it closes.</p></li>
+      <li><span class="moment-ico" aria-hidden="true">🧩</span><p>Your child has tried four enrichment classes and nobody's sure which one actually counts.</p></li>
+      <li><span class="moment-ico" aria-hidden="true">🛤️</span><p>Every stage has its own route. DSA-Sec, then DSA-JC or Poly EAE, then university, each with different rules.</p></li>
+    </ul>
+  </div>
+</section>
+
+<!-- HOW -->
+<section id="how" aria-labelledby="how-h">
+  <div class="wrap">
+    <div class="head">
+      <h2 id="how-h">How it works</h2>
+      <p class="lede">Three things, done a little at a time, from P4 all the way to university applications.</p>
+    </div>
+    <ol class="how-steps">
+      <li class="stage-primary"><span class="how-n">1</span><h3>Collect achievements</h3><p>Snap a photo of a certificate and OpenJio reads the details for you, with quick feedback on what's missing. No certificate? It goes on your list.</p></li>
+      <li class="stage-secondary"><span class="how-n">2</span><h3>Explore options</h3><p>See schools or courses that match what your child already does, why each one appears, and what you still need to check. On Pro and Elite, the scan also learns from records other families choose to share.</p></li>
+      <li class="stage-post"><span class="how-n">3</span><h3>Follow the plan</h3><p>Tick off tasks, get reminders before each window and, on a paid plan, talk it through with a consultant every month or two.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- PLANNER -->
+<section id="planner" aria-labelledby="planner-h">
+  <div class="wrap" id="plannerWrap">
+    <div class="planner-top head">
+      <h2 id="planner-h">Try the sample planner</h2>
+      <p class="lede">Pick a sample student and click through. Everything here is example data, kept only in this browser tab.</p>
+    </div>
+
+    <ol class="stepper" aria-label="Planner steps">
+      <li><button type="button" class="stepbtn" data-step="1"><span class="n">1</span><span class="t">Choose a student</span></button></li>
+      <li><button type="button" class="stepbtn" data-step="2"><span class="n">2</span><span class="t">Achievements</span></button></li>
+      <li><button type="button" class="stepbtn" data-step="3"><span class="n">3</span><span class="t">Explore options</span></button></li>
+      <li><button type="button" class="stepbtn" data-step="4"><span class="n">4</span><span class="t">Plan</span></button></li>
+    </ol>
+    <div class="step-mobile">
+      <p id="stepMobileLabel" aria-live="polite">Step 1 of 4: Choose a student</p>
+      <div class="bar" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+    </div>
+
+    <div class="stage-band" aria-hidden="true"></div>
+
+    <!-- Step 1 -->
+    <div class="panel" id="panel-1">
+      <h3 class="sr">Choose a student</h3>
+      <div class="ptiles" id="ptiles" role="group" aria-label="Sample students"></div>
+      <div class="journey">
+        <p id="journeyText"></p>
+        <span class="label l-sample">Sample profile</span>
+      </div>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="panel" id="panel-2">
+      <h3 class="sr">Achievements</h3>
+      <div class="panel-grid">
+        <div>
+          <div class="rec-head">
+            <span class="av" id="recAv" aria-hidden="true"></span>
+            <div class="who"><strong id="recName"></strong><span class="label l-sample">Sample</span><span class="small" id="recLine"></span></div>
+            <div class="rec-tools">
+              <button type="button" class="btn btn-primary btn-sm" id="openAdd">Add an achievement</button>
+              <button type="button" class="btn btn-quiet btn-sm" id="resetBtn">Reset sample</button>
+            </div>
+          </div>
+          <div class="filters" id="filters" role="group" aria-label="Filter achievements"></div>
+          <ul class="rec-list" id="recList"></ul>
+        </div>
+        <aside class="aside">
+          <h3>At a glance</h3>
+          <div class="stat-row">
+            <div class="stat"><b id="stTotal">0</b><span>achievements</span></div>
+            <div class="stat ok"><b id="stProof">0</b><span>with proof</span></div>
+            <div class="stat miss"><b id="stMiss">0</b><span>need proof</span></div>
+          </div>
+          <p>"Proof attached" means a photo, PDF or letter is saved with the achievement. It's your own copy of the evidence, not a check by the school or organiser.</p>
+          <p>Anything marked "Proof missing" becomes a task in the plan, so it doesn't get forgotten before applications.</p>
+          <div class="upload" id="uploadBox">
+            <h3>Try an upload</h3>
+            <p class="small muted">Use a photo of any certificate, or our sample one. The text is read inside your browser, so the file never leaves this device.</p>
+            <div class="row">
+              <label class="btn btn-primary btn-sm" for="upFile" id="upFileLabel">Choose a photo</label>
+              <input type="file" id="upFile" accept="image/png,image/jpeg,image/webp">
+              <button type="button" class="btn btn-ghost btn-sm" id="upSample">Use the sample certificate</button>
+            </div>
+            <div class="up-prog" id="upProg"><span></span></div>
+            <p class="up-status" id="upStatus" aria-live="polite"></p>
+            <div class="up-result" id="upResult">
+              <img class="up-thumb" id="upThumb" alt="Preview of the uploaded certificate">
+              <p class="small" style="margin-top:12px;font-weight:700">Quick feedback <span class="label l-sample">Free plan demo</span></p>
+              <ul class="fb" id="upFeedback"></ul>
+              <div class="up-fields">
+                <div class="field"><label for="upTitle">Title we read</label><input type="text" id="upTitle"></div>
+                <div class="field"><label for="upArea">Area</label><select id="upArea"></select></div>
+                <div class="field"><label for="upYear">Year</label><select id="upYear"><option>2026</option><option>2025</option><option>2024</option><option>2023</option></select></div>
+              </div>
+              <div class="row"><button type="button" class="btn btn-primary btn-sm" id="upAdd">Add to the record</button><button type="button" class="btn btn-quiet btn-sm" id="upCancel">Discard</button></div>
+            </div>
+            <div class="unlock" id="unlockBox"></div>
+            <p class="small muted" style="margin-top:10px">On Pro and Elite, every upload is read and filed automatically, with fuller feedback.</p>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="panel" id="panel-3">
+      <h3 class="sr">Explore options</h3>
+      <p class="muted" style="margin-bottom:8px;max-width:72ch">These schools and courses are fictional, used to show how suggestions work. A real listing would follow each school's published information. You'll never see a percentage chance of getting in.</p>
+      <p class="muted small" style="margin-bottom:18px;max-width:72ch">On Pro and Elite, the full scan will also compare the record with anonymised records that other families on OpenJio have agreed to share. Until enough families take part, suggestions come from your own record and each school's published information.</p>
+      <div class="explore">
+        <ul class="olist" id="olist" aria-label="Suggested options"></ul>
+        <div class="odetail" id="odetail"></div>
+      </div>
+      <div class="shortlist">
+        <h3>Shortlist</h3>
+        <p class="muted small" id="slHint"></p>
+        <div class="sl-items" id="slItems"></div>
+        <div id="cmpWrap"></div>
+      </div>
+    </div>
+
+    <!-- Step 4 -->
+    <div class="panel" id="panel-4">
+      <h3 class="sr">Plan</h3>
+      <div class="panel-grid">
+        <div>
+          <div class="progress">
+            <div class="progress-top"><b id="progLabel">0 of 0 tasks done</b><span class="muted small">Preparation progress</span></div>
+            <div class="pbar" role="progressbar" aria-label="Preparation progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="pbar"><span id="pbarFill" style="width:0"></span></div>
+            <p class="small muted">This tracks your family's preparation. It doesn't predict or change a school's decision.</p>
+          </div>
+          <ul class="tasks" id="tasks"></ul>
+          <div id="planEmpty"></div>
+          <div class="ck-actions">
+            <button type="button" class="btn btn-ghost btn-sm" data-open-checkin>Preview a check-in for this plan</button>
+          </div>
+        </div>
+        <aside class="aside">
+          <h3>Key moments</h3>
+          <ul class="milestones" id="milestones"></ul>
+          <p class="history" id="history"></p>
+          <div id="offLinks"></div>
+        </aside>
+      </div>
+    </div>
+
+    <div class="step-nav">
+      <button type="button" class="btn btn-ghost" id="backBtn">Back</button>
+      <span class="count" id="stepCount">Step 1 of 4</span>
+      <button type="button" class="btn btn-primary" id="nextBtn">Next</button>
+    </div>
+  </div>
+</section>
+
+<!-- CHECK-INS -->
+<section id="checkins" aria-labelledby="ck-h">
+  <div class="wrap">
+    <div class="head">
+      <h2 id="ck-h">A person to talk it through with</h2>
+      <p class="lede">The planner keeps track. A check-in is where you step back, look at the whole picture and agree what to do next.</p>
+    </div>
+    <div class="checkins">
+      <div class="ck junior">
+        <span class="label l-ok">Included in Pro</span>
+        <h3 style="margin-top:10px">Junior check-ins</h3>
+        <p class="who">With university students who went through DSA themselves.</p>
+        <ul>
+          <li>One check-in every two months, six a year</li>
+          <li>Enough to keep the record and shortlist on track between deadlines</li>
+        </ul>
+      </div>
+      <div class="ck senior">
+        <span class="label l-route">Included in Elite</span>
+        <h3 style="margin-top:10px">Senior check-ins</h3>
+        <p class="who">With former coaches and educators.</p>
+        <ul>
+          <li>One check-in every month, twelve a year</li>
+          <li>Alongside alerts for DSA-JC, Poly EAE, university and scholarships</li>
+        </ul>
+      </div>
+    </div>
+    <div class="cadence" aria-label="Check-ins across a year">
+      <div class="months"><span></span><div><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div><span></span></div>
+      <div class="cad-row"><b>Pro</b><div class="dots" aria-hidden="true"><span class="on"></span><span></span><span class="on"></span><span></span><span class="on"></span><span></span><span class="on"></span><span></span><span class="on"></span><span></span><span class="on"></span><span></span></div><small>6 a year, junior</small></div>
+      <div class="cad-row"><b>Elite</b><div class="dots senior" aria-hidden="true"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span></div><small>12 a year, senior</small></div>
+    </div>
+    <details class="cover">
+      <summary>What happens in a check-in?</summary>
+      <div class="in">
+        <ol class="agenda">
+          <li><span><b>Look through the record together</b><span>What's there, what's missing proof and what's new since last time.</span></span></li>
+          <li><span><b>Talk through the shortlist</b><span>Why each option is on it, and what still needs checking on the school's or course's own website.</span></span></li>
+          <li><span><b>Agree the next task</b><span>One or two clear things to do before the next check-in, added to your plan.</span></span></li>
+        </ol>
+      </div>
+    </details>
+    <div class="ck-actions">
+      <button type="button" class="btn btn-primary" data-open-checkin>Preview a sample check-in</button>
+      <span class="muted small">Based on whichever sample student is picked in the planner.</span>
+    </div>
+    <div class="oneoff-line">
+      <p><strong>Just want one conversation?</strong> A single one-hour consultation is S$30, with no subscription.</p>
+      <button type="button" class="btn btn-ghost btn-sm" data-signup="the one-hour consultation">Book a consultation</button>
+    </div>
+  </div>
+</section>
+
+<!-- CENTRES -->
+<section id="centres" aria-labelledby="dir-h" style="background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <div class="head">
+      <h2 id="dir-h">Tuition by subject, near you</h2>
+      <p class="lede">Find tuition centres by subject, level and area. Free help at school always shows first, because not every gap needs a paid class.</p>
+    </div>
+    <div class="dir-filters four">
+      <div><label for="fSubj">Subject</label>
+        <select id="fSubj">
+          <option value="English">English</option>
+          <option value="Maths">Maths</option>
+          <option value="Science">Science</option>
+          <option value="Chinese">Chinese</option>
+          <option value="Physics">Physics</option>
+          <option value="Chemistry">Chemistry</option>
+          <option value="Biology">Biology</option>
+          <option value="Economics">Economics</option>
+          <option value="General Paper">General Paper</option>
+          <option value="Literature">Literature</option>
+        </select></div>
+      <div><label for="fLoc">Area</label>
+        <select id="fLoc">
+          <option value="Central">Central</option>
+          <option value="North">North</option>
+          <option value="North-East">North-East</option>
+          <option value="East">East</option>
+          <option value="West">West</option>
+        </select></div>
+      <div><label for="fLvl">Level</label>
+        <select id="fLvl">
+          <option value="any">Any level</option>
+          <option value="Primary">Primary</option>
+          <option value="Secondary">Secondary</option>
+          <option value="JC">JC</option>
+        </select></div>
+    </div>
+    <p class="dir-count" id="dirCount" aria-live="polite"></p>
+    <ul class="dir-list" id="dirList"></ul>
+    <button type="button" class="btn btn-ghost btn-sm more" id="dirMore" hidden>Show all</button>
+    <p class="dir-note"><span class="label l-plain">How this list works</span><span>Centres are listed from public information on subjects and branch areas. The order is not a ranking, and no centre here is an OpenJio partner yet. Always check fees, branches and class levels with the centre. Partner centres will carry a clear "Partner" label, because they pay us a referral fee.</span></p>
+  </div>
+</section>
+
+<!-- NOTES -->
+<section id="notes" aria-labelledby="notes-h">
+  <div class="wrap">
+    <div class="head">
+      <h2 id="notes-h">Notes library, free after 3 uploads</h2>
+      <p class="lede">Students share their own revision notes. Add three achievements with proof to your record and the library opens on the free plan.</p>
+    </div>
+    <div id="notesLock" class="notes-lock">
+      <div>
+        <h3 id="lockTitle">Locked for now</h3>
+        <p class="muted" id="lockText" style="margin-top:6px">Upload proof for three achievements in the sample planner to open the library.</p>
+        <div class="unlock" id="unlockBox2"></div>
+      </div>
+      <a class="btn btn-primary" href="#planner" id="lockBtn">Go to the planner</a>
+    </div>
+    <div id="notesOpen" hidden>
+      <div class="dir-filters" style="grid-template-columns:repeat(2,minmax(0,280px))">
+        <div><label for="nLvl">Level</label><select id="nLvl"><option value="any">Any level</option><option value="Primary">Primary</option><option value="Secondary">Secondary</option><option value="JC">JC</option></select></div>
+        <div><label for="nSubj">Subject</label><select id="nSubj"><option value="any">Any subject</option></select></div>
+      </div>
+      <ul class="notes-list" id="notesList"></ul>
+    </div>
+    <p class="rules"><b>What can be shared:</b> only notes you wrote yourself. School worksheets, test papers and teachers' slides aren't allowed, and anything reported is taken down. Achievement uploads such as certificates are never shared with anyone.</p>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" aria-labelledby="price-h">
+  <div class="wrap">
+    <div class="head">
+      <h2 id="price-h">Simple plans, billed monthly</h2>
+      <p class="lede">Start free. Pay when you'd like a fuller plan and a person to check it with you.</p>
+    </div>
+
+    <div class="helpwant">
+      <span class="q" id="hwq">What kind of help would you like?</span>
+      <div class="hw-opts" role="group" aria-labelledby="hwq" id="hwOpts">
+        <button type="button" class="hw" data-hw="organise" aria-pressed="false">Keep everything organised myself</button>
+        <button type="button" class="hw" data-hw="moments" aria-pressed="false">Someone to check our plan every couple of months</button>
+        <button type="button" class="hw" data-hw="regular" aria-pressed="false">Monthly support from an experienced consultant</button>
+        <button type="button" class="hw" data-hw="once" aria-pressed="false">Just one conversation for now</button>
+      </div>
+      <p class="hw-out" id="hwOut" aria-live="polite">Pick one and the matching option below will be highlighted.</p>
+    </div>
+
+    <div class="plans">
+      <div class="plan" id="plan-free">
+        <span class="plan-name">Free</span>
+        <span class="plan-for">For getting organised</span>
+        <p class="price">S$0</p>
+        <dl class="prow">
+          <dt>Uploads</dt><dd>Limited, with quick feedback</dd>
+          <dt>School-fit scan</dt><dd>Basic, from your own record</dd>
+          <dt>Consultant check-ins</dt><dd>Not included</dd>
+        </dl>
+        <details><summary>See what's included</summary>
+          <ul><li>Achievement record with limited uploads</li><li>Quick feedback on each upload</li><li>Notes library, after 3 uploads</li><li>DSA calendar and reminders</li><li>Basic school-fit scan</li><li>Tuition and enrichment directory</li></ul>
+        </details>
+        <button type="button" class="btn btn-ghost" data-signup="Free">Choose Free</button>
+      </div>
+      <div class="plan" id="plan-pro">
+        <span class="plan-name">Pro</span>
+        <span class="plan-for">For the DSA-Sec years, P5 to P6</span>
+        <p class="price">S$49.99 <small>a month</small></p>
+        <dl class="prow">
+          <dt>Uploads</dt><dd>Unlimited, read and filed automatically</dd>
+          <dt>School-fit scan</dt><dd>Full, with reasons and next steps</dd>
+          <dt>Consultant check-ins</dt><dd>1 junior check-in every 2 months</dd>
+        </dl>
+        <details><summary>See what's included</summary>
+          <ul><li>Everything in Free</li><li>Unlimited uploads, each one read and filed for you</li><li>Full school-fit scan with reasons and next steps</li><li>Comparison with anonymised records other families agree to share, as more families join</li><li>1 junior check-in every 2 months, six a year</li><li>A plan from P5 to P6</li></ul>
+        </details>
+        <button type="button" class="btn btn-primary" data-signup="Pro">Choose Pro</button>
+      </div>
+      <div class="plan" id="plan-elite">
+        <span class="plan-name">Elite</span>
+        <span class="plan-for">For secondary and beyond</span>
+        <p class="price">S$99.99 <small>a month</small></p>
+        <dl class="prow">
+          <dt>Uploads</dt><dd>Unlimited, read and filed automatically</dd>
+          <dt>School-fit scan</dt><dd>Full, with reasons and next steps</dd>
+          <dt>Consultant check-ins</dt><dd>1 senior check-in every month</dd>
+        </dl>
+        <details><summary>See what's included</summary>
+          <ul><li>Everything in Pro</li><li>1 senior check-in every month, twelve a year</li><li>Alerts for DSA-JC, Poly EAE, university and scholarships</li><li>Filter centres by past results, once we have the data</li></ul>
+        </details>
+        <button type="button" class="btn btn-ghost" data-signup="Elite">Choose Elite</button>
+      </div>
+    </div>
+
+    <div class="oneoff-line" id="plan-once">
+      <p><strong>One-hour consultation, S$30.</strong> No subscription. Useful for a second opinion on a shortlist.</p>
+      <button type="button" class="btn btn-ghost btn-sm" data-signup="the one-hour consultation">Book a consultation</button>
+    </div>
+
+    <div class="pro-strip">
+      <h3>What the paid plans do between check-ins</h3>
+      <p class="strip-foot" style="border-top:0;margin-top:8px;padding-top:0">Every photo or PDF you add is read automatically and filed under the right area. The full school-fit scan explains why each school or course appears and what to check next. Reminders and the task list keep running, so each check-in starts from an up-to-date record.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ALTERNATIVES -->
+<section id="alternatives" aria-labelledby="alt-h" style="padding-top:0">
+  <div class="wrap">
+    <div class="head">
+      <h2 id="alt-h">Why not use what you already have?</h2>
+      <p class="lede">You're probably using one or two of these already. Each does part of the job.</p>
+    </div>
+    <div class="alt">
+      <table>
+        <thead><tr><th scope="col"><span class="sr">Question</span></th><th scope="col">LinkedIn</th><th scope="col">A shared folder</th><th scope="col">Your tuition centre</th><th scope="col">DSA info sites</th><th scope="col" class="us">OpenJio</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Can a P5 child have one?</th><td class="no">No, users must be 16 or older</td><td>Yes</td><td>Yes</td><td>Yes</td><td class="us">Yes, a parent runs the account</td></tr>
+          <tr><th scope="row">Keeps proof in one place</th><td>Self-reported, no proof</td><td>Yes, but unsorted</td><td>Only their own classes</td><td class="no">No</td><td class="us">Yes, sorted by area</td></tr>
+          <tr><th scope="row">Suggests schools from your child's record</th><td class="no">No</td><td class="no">No</td><td>For their own subject</td><td>General information</td><td class="us">Yes, with reasons</td></tr>
+          <tr><th scope="row">Reminds you what's next</th><td class="no">No</td><td class="no">No</td><td>Usually their next programme</td><td>Lists dates</td><td class="us">Yes, with tasks and reminders</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" aria-labelledby="faq-h" style="padding-top:0">
+  <div class="wrap">
+    <div class="head"><h2 id="faq-h">Questions you might have</h2></div>
+    <div class="faq">
+      <details><summary>Can OpenJio get my child a place?</summary><p>No. DSA and other admissions decisions belong to schools and institutions. OpenJio helps you stay organised and plan. Nobody can promise an offer.</p></details>
+      <details><summary>Is it only for DSA-Sec?</summary><p>No. We start with DSA-Sec because the deadlines are fixed and it's the first big step. The same record carries on to DSA-JC, Poly EAE, university and scholarship applications.</p></details>
+      <details><summary>Who are the consultants?</summary><p>Junior consultants are university students who went through DSA themselves. Senior consultants are former coaches and educators. Pro includes a junior check-in every two months. Elite includes a senior check-in every month.</p></details>
+      <details><summary>What happens to the photos I upload?</summary><p>Certificates and other proof stay private to your family. On the free plan you get quick feedback on each upload. On Pro and Elite, uploads are read and filed automatically. Proof is never shared in the notes library.</p></details>
+      <details><summary>How does the school-fit scan use other families' records?</summary><p>Only records that families have agreed to share are used, with names and personal details removed. Until enough families take part, suggestions are based on your own record and each school's published information.</p></details>
+      <details><summary>How are tuition centres chosen for the list?</summary><p>They come from public information about each centre's subjects and branch areas. The list is not a ranking. When partner centres join, they will carry a "Partner" label because they pay us a referral fee, and free help at school will still show first.</p></details>
+      <details><summary>What happens to what I type in the sample planner?</summary><p>Nothing leaves your browser. The sample planner keeps changes in this tab only, and they disappear when you close or reload the page.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="final" aria-labelledby="final-h">
+  <div class="wrap">
+    <h2 id="final-h">See how it would work for your family.</h2>
+    <p>Pick a sample student, add an achievement, build a shortlist and tick off a task. It takes about two minutes.</p>
+    <a class="btn" href="#planner">Try the sample planner</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="brand" href="#top" aria-label="OpenJio, back to top"><span class="brand-mark" aria-hidden="true"></span><span class="brand-name">OpenJio</span></a>
+        <p>Admissions planning for Singapore families, from P4 to university.</p>
+      </div>
+      <div><h4>Product</h4><ul><li><a href="#how">How it works</a></li><li><a href="#planner">Sample planner</a></li><li><a href="#pricing">Pricing</a></li></ul></div>
+      <div><h4>Support</h4><ul><li><a href="#checkins">Consultant check-ins</a></li><li><a href="#centres">Tuition directory</a></li><li><a href="#notes">Notes library</a></li><li><a href="#faq">FAQ</a></li></ul></div>
+      <div><h4>MOE admissions</h4><ul>
+        <li><a href="https://www.moe.gov.sg/secondary/dsa" target="_blank" rel="noopener">MOE: DSA-Sec</a></li>
+        <li><a href="https://www.moe.gov.sg/dsa-jc" target="_blank" rel="noopener">MOE: DSA-JC</a></li>
+        <li><a href="https://www.moe.gov.sg/post-secondary/admissions/poly-eae" target="_blank" rel="noopener">MOE: Poly EAE</a></li>
+      </ul></div>
+      <div><h4>University admissions</h4><ul>
+        <li><a href="https://www.nus.edu.sg/oam" target="_blank" rel="noopener">NUS</a></li>
+        <li><a href="https://www.ntu.edu.sg/admissions/undergraduate" target="_blank" rel="noopener">NTU</a></li>
+        <li><a href="https://admissions.smu.edu.sg/" target="_blank" rel="noopener">SMU</a></li>
+        <li><a href="https://www.sutd.edu.sg/admissions/undergraduate/" target="_blank" rel="noopener">SUTD</a></li>
+        <li><a href="https://www.singaporetech.edu.sg/admissions/undergraduate" target="_blank" rel="noopener">SIT</a></li>
+        <li><a href="https://www.suss.edu.sg/full-time-undergraduate" target="_blank" rel="noopener">SUSS</a></li>
+      </ul></div>
+    </div>
+    <p class="copy">© 2026 OpenJio</p>
+  </div>
+</footer>
+
+<!-- Add achievement -->
+<dialog id="addDlg" aria-labelledby="addH">
+  <form class="dlg" id="addForm" novalidate>
+    <div class="dlg-top"><h3 id="addH">Add an achievement</h3><button type="button" class="x" data-close aria-label="Close">×</button></div>
+    <p class="muted small" style="margin-top:4px">This adds an example to the sample record. Nothing is uploaded.</p>
+    <div class="field">
+      <label for="aTitle">What did they do?</label>
+      <input type="text" id="aTitle" autocomplete="off">
+      <p class="err" id="aTitleErr">Add a short title, like "Choir, Gold at a national festival".</p>
+    </div>
+    <div class="field"><label for="aArea">Area</label><select id="aArea"></select></div>
+    <div class="field"><label for="aKind">Type</label>
+      <select id="aKind"><option value="award">Award or result</option><option value="lead">Leadership role</option><option value="activity">Activity or programme</option></select></div>
+    <div class="field"><label for="aYear">Year</label>
+      <select id="aYear"><option>2026</option><option>2025</option><option>2024</option><option>2023</option></select></div>
+    <fieldset class="field" style="border:0;padding:0;margin-left:0;margin-right:0"><legend class="flabel" style="padding:0;font-weight:600;font-size:.9rem;margin-bottom:6px">Proof</legend>
+      <div class="radios">
+        <label><input type="radio" name="aProof" value="attached" checked> Attach sample proof now</label>
+        <label><input type="radio" name="aProof" value="missing"> I'll find it later</label>
+      </div></fieldset>
+    <div class="dlg-foot">
+      <button type="button" class="btn btn-ghost" data-close>Cancel</button>
+      <button type="submit" class="btn btn-primary">Add achievement</button>
+    </div>
+  </form>
+</dialog>
+
+<!-- Proof preview -->
+<dialog id="proofDlg" aria-labelledby="proofH">
+  <div class="dlg">
+    <div class="dlg-top"><h3 id="proofH">Sample proof</h3><button type="button" class="x" data-close aria-label="Close">×</button></div>
+    <div id="proofBody"></div>
+    <div class="dlg-foot"><button type="button" class="btn btn-primary" data-close>Done</button></div>
+  </div>
+</dialog>
+
+<!-- Check-in preview -->
+<dialog id="ckDlg" aria-labelledby="ckH">
+  <div class="dlg">
+    <div class="dlg-top"><h3 id="ckH">A sample check-in</h3><button type="button" class="x" data-close aria-label="Close">×</button></div>
+    <p class="muted small" style="margin-top:4px" id="ckSub"></p>
+    <ol class="agenda" id="ckAgenda"></ol>
+    <div class="takeaway" id="ckTake"></div>
+    <p class="small muted" style="margin-top:14px">An illustration of a session, not a booking. Junior check-ins are with university students who went through DSA. Senior check-ins are with former coaches and educators.</p>
+    <div class="dlg-foot"><button type="button" class="btn btn-primary" data-close>Close</button></div>
+  </div>
+</dialog>
+
+<!-- Sign-up (no backend yet) -->
+<dialog id="signDlg" aria-labelledby="signH">
+  <div class="dlg">
+    <div class="dlg-top"><h3 id="signH">Sign-ups aren't open yet</h3><button type="button" class="x" data-close aria-label="Close">×</button></div>
+    <p style="margin-top:10px">You picked <b id="signPlan">Pro</b>. OpenJio isn't taking sign-ups or bookings yet, so this can't create an account or book a session today.</p>
+    <p style="margin-top:10px" class="muted">In the meantime, the sample planner shows how everything works.</p>
+    <!-- To collect real interest, replace this dialog with a form that posts to a service such as Google Forms or Formspree. -->
+    <div class="dlg-foot">
+      <button type="button" class="btn btn-ghost" data-close>Close</button>
+      <a class="btn btn-primary" href="#planner" id="signToPlanner">Try the sample planner</a>
+    </div>
+  </div>
+</dialog>
+
+<div class="toast" id="toast" role="status" aria-live="polite"><span id="toastMsg"></span><button type="button" id="toastBtn" hidden>Undo</button></div>
+
+<script>
+(function(){
+  const $ = (s, r=document) => r.querySelector(s);
+  const $$ = (s, r=document) => Array.from(r.querySelectorAll(s));
+  const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ================= sample data ================= */
+  const PROFILES = {
+    p5:{
+      key:'p5', stage:'primary', tag:'Primary 5', name:'Xiao Ming', initials:'XM',
+      line:'Primary 5, exploring DSA-Sec',
+      blurb:"In the robotics club since P3 and won a national competition this year. There's also a wushu medal, but the certificate never came home.",
+      journey:'Xiao Ming is in Primary 5, so this is the year to settle on one or two talent areas before DSA-Sec applications in P6.',
+      areas:{stem:'STEM and robotics', maths:'Maths', lead:'Leadership', sports:'Sports', arts:'Arts'},
+      addHint:'e.g. Choir, Gold at a national festival',
+      records:[
+        {id:'a1', title:'National robotics competition, Gold', note:'Team captain', areas:['stem'], year:2026, kind:'award', proof:'attached', proofType:'Certificate'},
+        {id:'a2', title:'Infocomm club vice-captain', note:'Helps run coding sessions for P3 pupils', areas:['lead','stem'], year:2026, kind:'lead', proof:'attached', proofType:'Letter from CCA teacher'},
+        {id:'a3', title:'Robotics club member', note:'Weekly sessions since P3', areas:['stem'], year:2024, kind:'activity', proof:'attached', proofType:'CCA record'},
+        {id:'a4', title:'Maths olympiad (junior), Bronze', note:'', areas:['maths'], year:2025, kind:'award', proof:'attached', proofType:'Certificate'},
+        {id:'a5', title:'Class monitor', note:'Two years running', areas:['lead'], year:2025, kind:'lead', proof:'attached', proofType:'Report book comment'},
+        {id:'a6', title:'Inter-school wushu competition, 3rd place', note:'Changquan', areas:['sports'], year:2025, kind:'award', proof:'missing', proofType:'Certificate'}
+      ],
+      options:[
+        {id:'o1', name:'Northvale Secondary', route:'DSA-Sec', programme:'Robotics', areas:['stem'], checks:['Whether Robotics is offered as a talent area this year','What the selection trial involves','Dates for the next DSA-Sec exercise']},
+        {id:'o2', name:'Eastbrook School', route:'DSA-Sec', programme:'Mathematics', areas:['maths'], checks:['Whether there is a selection test','Which competitions the school mentions','Dates for the next DSA-Sec exercise']},
+        {id:'o3', name:'Westlake Secondary', route:'DSA-Sec', programme:'Wushu', areas:['sports'], checks:['What to prepare for the trial','Whether competition records are needed','Dates for the next DSA-Sec exercise']},
+        {id:'o4', name:'Central Park Secondary', route:'DSA-Sec', programme:'Leadership', areas:['lead'], checks:['What leadership evidence the school looks at','Whether there is an interview or camp','Dates for the next DSA-Sec exercise']}
+      ],
+      tasks:[
+        {id:'t-dates', text:'Review application dates', hint:"Check MOE's DSA-Sec page for the next exercise."},
+        {id:'t-q', text:'Prepare questions for a consultant check-in', hint:"Write down two or three things you're unsure about."},
+        {id:'t-top', text:'Choose the three achievements to lead with', hint:'Ones with proof attached are easiest to use.'}
+      ],
+      milestones:[
+        {when:'Start of P5', text:'Agree one or two talent areas to focus on'},
+        {when:'Through P5', text:'Add achievements and proof as they happen'},
+        {when:'Around May of P6', text:'DSA-Sec applications open'},
+        {when:'After applications close', text:'Trials and interviews, set by each school'}
+      ],
+      history:'For reference only: in 2026, DSA-Sec applications ran from 6 May to 2 June. MOE announces new dates each year.',
+      links:[{href:'https://www.moe.gov.sg/secondary/dsa', label:'DSA-Sec on the MOE website'}]
+    },
+    sec:{
+      key:'sec', stage:'secondary', tag:'Secondary 3', name:'Aisha', initials:'AI',
+      line:'Secondary 3, exploring DSA-JC or Poly EAE',
+      blurb:'Debates for the school team and loves biology. Netball takes up most Saturdays, but the competition certificate is nowhere to be found.',
+      journey:'Aisha is in Secondary 3, weighing a JC through DSA-JC against a poly course through the Early Admissions Exercise.',
+      areas:{debate:'Debate and public speaking', science:'Science', service:'Leadership and service', sports:'Sports'},
+      addHint:'e.g. Model UN, Best Delegate',
+      records:[
+        {id:'b1', title:'National schools debate championship, quarter-finalist', note:'First speaker', areas:['debate'], year:2026, kind:'award', proof:'attached', proofType:'Results list'},
+        {id:'b2', title:'Debate club vice-captain', note:'Coaches the Sec 1 team', areas:['service','debate'], year:2026, kind:'lead', proof:'attached', proofType:'Letter from CCA teacher'},
+        {id:'b3', title:'Biology olympiad, Honourable mention', note:'', areas:['science'], year:2025, kind:'award', proof:'attached', proofType:'Certificate'},
+        {id:'b4', title:'Inter-school netball, top 8', note:'Goal attack', areas:['sports'], year:2025, kind:'award', proof:'missing', proofType:'Certificate'},
+        {id:'b5', title:'Tutoring at a community centre, 40 hours', note:'Weekly maths help for primary pupils', areas:['service'], year:2025, kind:'activity', proof:'attached', proofType:'Volunteer record'}
+      ],
+      options:[
+        {id:'c1', name:'Riverside Junior College', route:'DSA-JC', programme:'Debate', areas:['debate'], checks:['Whether Debate is a DSA-JC talent area this year','Interview or trial format',"The JC's own application dates"]},
+        {id:'c2', name:'Marina Hill Junior College', route:'DSA-JC', programme:'Science', areas:['science'], checks:['Which science talent areas are offered','Whether there is a selection test',"The JC's own application dates"]},
+        {id:'c3', name:'Harbourfront Polytechnic', route:'Poly EAE', programme:'Diploma in Biomedical Science', areas:['science','service'], checks:["The course's aptitude and interest criteria",'Whether an interview or portfolio is needed','The next Poly EAE window']},
+        {id:'c4', name:'Kallang Point Polytechnic', route:'Poly EAE', programme:'Diploma in Media and Communication', areas:['debate'], checks:['What the course looks for in applicants','Whether a portfolio is needed','The next Poly EAE window']}
+      ],
+      tasks:[
+        {id:'t-dates', text:'Review application dates', hint:'Each JC sets its own DSA-JC dates. Poly EAE has one window a year.'},
+        {id:'t-q', text:'Prepare questions for a consultant check-in', hint:'JC or poly is a good one to talk through.'},
+        {id:'t-route', text:'Talk through JC and poly routes at home', hint:'Note what matters most to Aisha in each.'}
+      ],
+      milestones:[
+        {when:'Secondary 3', text:'Keep the record up to date and explore both routes'},
+        {when:'Mid-year of Secondary 4', text:'DSA-JC applications, with dates set by each JC'},
+        {when:'Around June of Secondary 4', text:'Poly EAE applications'},
+        {when:'After national exam results', text:'JC and poly admissions'}
+      ],
+      history:'For reference only: in 2026, Poly EAE applications for Secondary 4 students ran from 25 June to 1 July.',
+      links:[{href:'https://www.moe.gov.sg/dsa-jc', label:'DSA-JC on the MOE website'},{href:'https://www.moe.gov.sg/post-secondary/admissions/poly-eae', label:'Poly EAE on the MOE website'}]
+    },
+    post:{
+      key:'post', stage:'post', tag:'Full-time NS', name:'Ryan', initials:'RY',
+      line:'Serving NS after poly, preparing for university applications',
+      blurb:'Finished an engineering diploma before NS. The final-year robot won a project award. The hackathon certificate is stuck in an old school email account.',
+      journey:'Ryan is serving NS after poly and getting ready to apply for university courses and scholarships.',
+      areas:{eng:'Engineering', lead:'Leadership', work:'Work experience', sports:'Sports'},
+      addHint:'e.g. Volunteer project lead',
+      records:[
+        {id:'d1', title:'Final-year project award, autonomous delivery robot', note:'Team of four', areas:['eng'], year:2025, kind:'award', proof:'attached', proofType:'Certificate'},
+        {id:'d2', title:'Student council vice-president', note:'Poly student council', areas:['lead'], year:2024, kind:'lead', proof:'attached', proofType:'Letter'},
+        {id:'d3', title:'Hackathon, 2nd place', note:'48-hour smart city challenge', areas:['eng'], year:2024, kind:'award', proof:'missing', proofType:'Certificate'},
+        {id:'d4', title:'Engineering internship, 12 weeks', note:'Automation team', areas:['work','eng'], year:2025, kind:'activity', proof:'attached', proofType:'Internship letter'},
+        {id:'d5', title:'Poly floorball team', note:'Two seasons', areas:['sports'], year:2023, kind:'activity', proof:'attached', proofType:'CCA record'}
+      ],
+      options:[
+        {id:'e1', name:'Harbour University', route:'University', programme:'Computer Engineering', areas:['eng','work'], checks:['Course prerequisites for poly graduates','Whether there is an interview or aptitude test','The application window for the next intake']},
+        {id:'e2', name:'Seaview University', route:'University', programme:'Robotics and Mechatronics', areas:['eng'], checks:['Which diplomas the course accepts','Whether a portfolio of projects helps','The application window for the next intake']},
+        {id:'e3', name:'Lion City Engineering Scholarship', route:'Scholarship', programme:'Engineering scholarship', areas:['eng','lead'], checks:['Bond and service terms','Essay or interview requirements','The closing date']},
+        {id:'e4', name:'Seaview Institute of Technology', route:'University', programme:'Systems Engineering', areas:['work','eng'], checks:['How work experience is considered','Interview format','The application window for the next intake']}
+      ],
+      tasks:[
+        {id:'t-dates', text:'Review application dates', hint:'Each university and scholarship sets its own dates.'},
+        {id:'t-q', text:'Prepare questions for a consultant check-in', hint:'Course or scholarship first is a good question to start with.'},
+        {id:'t-ps', text:'Outline a short personal statement', hint:'Three points, built on the strongest achievements.'}
+      ],
+      milestones:[
+        {when:'During NS', text:'Gather proof and update the record'},
+        {when:'Before applications open', text:'Shortlist courses and scholarships'},
+        {when:'Application period', text:'Apply, with dates set by each university'},
+        {when:'After applying', text:'Interviews or tests, if the course has them'}
+      ],
+      history:"University and scholarship dates change each year. Always check the institution's own page.",
+      links:[{href:'https://www.nus.edu.sg/oam', label:'NUS undergraduate admissions'},{href:'https://www.ntu.edu.sg/admissions/undergraduate', label:'NTU undergraduate admissions'},{href:'https://www.sutd.edu.sg/admissions/undergraduate/', label:'SUTD undergraduate admissions'},{href:'https://www.singaporetech.edu.sg/admissions/undergraduate', label:'SIT undergraduate admissions'}]
+    }
+  };
+  const KIND = {award:'Award', lead:'Leadership role', activity:'Activity'};
+  const STEP_NAMES = ['Choose a student','Achievements','Explore options','Plan'];
+
+  /* ================= state ================= */
+  const clone = o => JSON.parse(JSON.stringify(o));
+  function freshData(pk){
+    const p = PROFILES[pk];
+    return {
+      records: clone(p.records).map(r => Object.assign(r, {needsProof: r.proof==='missing'})),
+      shortlist: [], compare: [], done: [], sel: p.options[0].id, filter: 'all'
+    };
+  }
+  const S = { profile:'p5', step:1, data:{} };
+  Object.keys(PROFILES).forEach(k => S.data[k] = freshData(k));
+  let nextId = 1, lastRemoved = null, uploads = 0;
+  const UNLOCK_AT = 3;
+  const P = () => PROFILES[S.profile];
+  const D = () => S.data[S.profile];
+
+  /* ================= toast ================= */
+  const toastEl = $('#toast'), toastBtn = $('#toastBtn');
+  let toastTimer, toastAction = null;
+  function toast(msg, actionLabel, action){
+    $('#toastMsg').textContent = msg;
+    toastAction = action || null;
+    toastBtn.hidden = !action;
+    if(action) toastBtn.textContent = actionLabel;
+    toastEl.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toastEl.classList.remove('show'), action ? 7000 : 3200);
+  }
+  toastBtn.addEventListener('click', () => { const a = toastAction; toastAction = null; toastEl.classList.remove('show'); if(a) a(); });
+
+  /* ================= helpers ================= */
+  const supporting = opt => D().records.filter(r => r.areas.some(a => opt.areas.includes(a)));
+  const areaName = k => P().areas[k] || k;
+  function setStageClass(){
+    const w = $('#plannerWrap');
+    w.classList.remove('stage-primary','stage-secondary','stage-post');
+    w.classList.add('stage-' + P().stage);
+  }
+
+  /* ================= step 1 ================= */
+  function renderProfiles(){
+    $('#ptiles').innerHTML = Object.values(PROFILES).map(p => `
+      <button type="button" class="ptile stage-${p.stage}" data-profile="${p.key}" aria-pressed="${S.profile===p.key}">
+        <span class="tick" aria-hidden="true">✓</span>
+        <span class="row"><span class="av" aria-hidden="true">${p.initials}</span><span><strong>${esc(p.name)}</strong><span class="stage">${esc(p.tag)}</span></span></span>
+        <p>${esc(p.blurb)}</p>
+      </button>`).join('');
+    $('#journeyText').textContent = P().journey;
+  }
+
+  /* ================= step 2 ================= */
+  function renderRecord(){
+    const p = P(), d = D();
+    $('#recAv').textContent = p.initials;
+    $('#recName').textContent = p.name;
+    $('#recLine').textContent = p.line;
+    const counts = {all:d.records.length};
+    d.records.forEach(r => r.areas.forEach(a => counts[a] = (counts[a]||0) + 1));
+    if(d.filter !== 'all' && !p.areas[d.filter]) d.filter = 'all';
+    $('#filters').innerHTML = [['all','All']].concat(Object.entries(p.areas))
+      .map(([k,l]) => `<button type="button" class="filter" data-filter="${k}" aria-pressed="${d.filter===k}">${esc(l)} (${counts[k]||0})</button>`).join('');
+    const list = d.records.filter(r => d.filter==='all' || r.areas.includes(d.filter)).sort((a,b) => b.year - a.year);
+    $('#recList').innerHTML = list.length ? list.map(r => `
+      <li class="rec" id="rec-${r.id}">
+        <span class="rec-year">${r.year}</span>
+        <div>
+          <div class="rec-title">${esc(r.title)}</div>
+          ${r.note ? `<div class="rec-note">${esc(r.note)}</div>` : ''}
+          <div class="rec-meta">
+            ${r.areas.map(a => `<span class="label l-plain">${esc(areaName(a))}</span>`).join('')}
+            <span class="label l-plain">${KIND[r.kind]}</span>
+            ${r.proof==='attached' ? '<span class="label l-ok">✓ Proof attached</span>' : '<span class="label l-miss">! Proof missing</span>'}
+          </div>
+          <div class="rec-actions">
+            ${r.proof==='attached'
+              ? `<button type="button" class="act" data-view="${r.id}">View sample proof</button>`
+              : `<button type="button" class="act attach" data-attach="${r.id}">Attach sample proof</button>`}
+            <button type="button" class="act danger" data-remove="${r.id}" aria-label="Remove ${esc(r.title)}">Remove</button>
+          </div>
+        </div>
+      </li>`).join('')
+      : `<li class="empty">Nothing here yet. Add an achievement or pick another filter.</li>`;
+    const total = d.records.length, withP = d.records.filter(r => r.proof==='attached').length;
+    $('#stTotal').textContent = total; $('#stProof').textContent = withP; $('#stMiss').textContent = total - withP;
+  }
+  function flash(id){
+    const el = $('#rec-' + id); if(!el || reduced) return;
+    el.classList.add('flash'); setTimeout(() => el.classList.remove('flash'), 900);
+  }
+  function attachProof(id){
+    const r = D().records.find(x => x.id === id); if(!r) return;
+    r.proof = 'attached'; countUpload();
+    renderAll(); flash(id);
+    toast(r.needsProof ? `Sample proof attached to "${r.title}". Its task in the plan is ticked off.` : `Sample proof attached to "${r.title}".`);
+  }
+
+  /* ================= step 3 ================= */
+  function renderExplore(){
+    const p = P(), d = D();
+    if(!p.options.find(o => o.id === d.sel)) d.sel = p.options[0].id;
+    $('#olist').innerHTML = p.options.map(o => {
+      const n = supporting(o).length, on = d.shortlist.includes(o.id);
+      return `<li><button type="button" class="obtn" data-opt="${o.id}" aria-pressed="${d.sel===o.id}">
+        <span class="nm">${esc(o.name)}</span>
+        <span class="sub">${esc(o.route)}: ${esc(o.programme)}. ${n} supporting achievement${n===1?'':'s'}</span>
+        <span class="on">${on ? '<span class="label l-ok">✓ Shortlisted</span>' : ''}</span>
+      </button></li>`;
+    }).join('');
+    const o = p.options.find(x => x.id === d.sel), sup = supporting(o), on = d.shortlist.includes(o.id);
+    const award = sup.find(r => r.kind === 'award');
+    const areaTxt = o.areas.map(areaName).join(' and ').toLowerCase();
+    const why = !sup.length
+      ? `Nothing in ${esc(p.name)}'s record links to ${esc(areaTxt)} at the moment. Keep it on the list only if it's a genuine interest.`
+      : `It's here because ${esc(p.name)} has ${sup.length} achievement${sup.length>1?'s':''} in ${esc(areaTxt)}${award ? `, including ${esc(award.title)}` : ''}. That's a reason to look closer, not a prediction.`;
+    const missing = sup.filter(r => r.proof === 'missing');
+    $('#odetail').innerHTML = `
+      <h3>${esc(o.name)}</h3>
+      <div class="labels"><span class="label l-sample">Fictional example</span><span class="label l-route">${esc(o.route)}</span><span class="label l-plain">${esc(o.programme)}</span></div>
+      <p class="why">${why}</p>
+      <h4>Achievements that support it</h4>
+      <ul>${sup.length ? sup.map(r => `<li><span>${esc(r.title)}</span>${r.proof==='attached' ? '<span class="label l-ok">✓ Proof</span>' : `<button type="button" class="act attach" data-attach="${r.id}">Attach sample proof</button>`}</li>`).join('') : '<li class="muted">None yet</li>'}</ul>
+      <h4>Still to check on the official website</h4>
+      <ul>${o.checks.map(c => `<li class="check-li">${esc(c)}</li>`).join('')}</ul>
+      ${missing.length ? `<p class="small" style="margin-top:12px;color:var(--coral-ink)">${missing.length} supporting achievement${missing.length>1?'s need':' needs'} proof before applying.</p>` : ''}
+      <button type="button" class="btn ${on?'btn-ghost':'btn-primary'}" data-toggle-sl="${o.id}">${on ? 'Remove from shortlist' : 'Add to shortlist'}</button>`;
+    renderShortlist();
+  }
+  function renderShortlist(){
+    const p = P(), d = D();
+    d.compare = d.compare.filter(id => d.shortlist.includes(id));
+    const items = d.shortlist.map(id => p.options.find(o => o.id === id));
+    $('#slHint').textContent = !items.length
+      ? 'Nothing yet. Add an option above and it will appear here and in the plan.'
+      : items.length === 1 ? 'Add one more option to compare two side by side.' : 'Tick two options to compare them side by side.';
+    $('#slItems').innerHTML = items.map(o => `
+      <div class="sl-item">
+        ${items.length > 1 ? `<label><input type="checkbox" data-cmp="${o.id}" ${d.compare.includes(o.id)?'checked':''}> <b>${esc(o.name)}</b></label>` : `<b>${esc(o.name)}</b>`}
+        <button type="button" class="x" data-toggle-sl="${o.id}" aria-label="Remove ${esc(o.name)} from shortlist">×</button>
+      </div>`).join('');
+    if(d.compare.length === 2){
+      const [a,b] = d.compare.map(id => p.options.find(o => o.id === id));
+      const supList = o => { const s = supporting(o); return s.length ? `<ul>${s.map(r => `<li>${esc(r.title)}</li>`).join('')}</ul>` : 'None yet'; };
+      const miss = o => { const n = supporting(o).filter(r => r.proof==='missing').length; return n ? `<span class="label l-miss">! ${n} missing</span>` : '<span class="label l-ok">✓ All attached</span>'; };
+      $('#cmpWrap').innerHTML = `<div class="cmp"><table>
+        <caption class="sr">Comparing ${esc(a.name)} and ${esc(b.name)}</caption>
+        <thead><tr><th scope="col"><span class="sr">Detail</span></th><th scope="col">${esc(a.name)}</th><th scope="col">${esc(b.name)}</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Route</th><td>${esc(a.route)}</td><td>${esc(b.route)}</td></tr>
+          <tr><th scope="row">Talent area or course</th><td>${esc(a.programme)}</td><td>${esc(b.programme)}</td></tr>
+          <tr><th scope="row">Supporting achievements</th><td>${supList(a)}</td><td>${supList(b)}</td></tr>
+          <tr><th scope="row">Proof</th><td>${miss(a)}</td><td>${miss(b)}</td></tr>
+          <tr><th scope="row">Still to check</th><td><ul>${a.checks.map(c=>`<li>${esc(c)}</li>`).join('')}</ul></td><td><ul>${b.checks.map(c=>`<li>${esc(c)}</li>`).join('')}</ul></td></tr>
+          <tr><th scope="row"><span class="sr">Actions</span></th><td><button type="button" class="act danger" data-toggle-sl="${a.id}">Remove from shortlist</button></td><td><button type="button" class="act danger" data-toggle-sl="${b.id}">Remove from shortlist</button></td></tr>
+        </tbody></table></div>`;
+    } else $('#cmpWrap').innerHTML = '';
+  }
+  function toggleShortlist(id){
+    const d = D(), o = P().options.find(x => x.id === id);
+    if(d.shortlist.includes(id)){
+      d.shortlist = d.shortlist.filter(x => x !== id);
+      d.compare = d.compare.filter(x => x !== id);
+      d.done = d.done.filter(x => x !== 'req-' + id);
+      toast(`${o.name} removed from the shortlist and the plan.`);
+    } else {
+      d.shortlist.push(id);
+      toast(`${o.name} added. A task to check its requirements is now in the plan.`);
+    }
+    renderAll();
+  }
+
+  /* ================= step 4 ================= */
+  function taskList(){
+    const p = P(), d = D(), out = [];
+    d.records.filter(r => r.needsProof).forEach(r => out.push({id:'proof-'+r.id, rid:r.id, text:`Find the missing proof for ${r.title}`, hint:'A photo of the certificate or medal, or a letter from the organiser.', done:r.proof==='attached', tag:'From the record', tagClass:'l-miss'}));
+    d.shortlist.forEach(sid => { const o = p.options.find(x => x.id === sid);
+      out.push({id:'req-'+sid, text:`Check ${o.name}'s published requirements for ${o.programme}`, hint:o.checks[0] + '.', done:d.done.includes('req-'+sid), tag:'From the shortlist', tagClass:'l-route'}); });
+    p.tasks.forEach(t => out.push({id:t.id, text:t.text, hint:t.hint, done:d.done.includes(t.id)}));
+    return out;
+  }
+  function renderPlan(){
+    const p = P(), d = D(), tasks = taskList();
+    const done = tasks.filter(t => t.done).length, pct = tasks.length ? Math.round(done / tasks.length * 100) : 0;
+    $('#progLabel').textContent = `${done} of ${tasks.length} tasks done`;
+    $('#pbarFill').style.width = pct + '%';
+    $('#pbar').setAttribute('aria-valuenow', pct);
+    $('#tasks').innerHTML = tasks.map(t => `
+      <li class="task ${t.done?'done':''}">
+        <input type="checkbox" id="tk-${t.id}" data-task="${t.id}" ${t.rid?`data-rid="${t.rid}"`:''} ${t.done?'checked':''}>
+        <label for="tk-${t.id}"><span class="tt">${esc(t.text)}</span><span class="th">${esc(t.hint)}</span></label>
+        ${t.tag ? `<span class="label ${t.tagClass} src">${t.tag}</span>` : ''}
+      </li>`).join('');
+    $('#planEmpty').innerHTML = d.shortlist.length ? '' : `<p class="plan-empty">The shortlist is empty. Add a school or course in step 3 and a task to check its requirements will appear here. <button type="button" class="linklike" data-goto="3">Go to Explore options</button></p>`;
+    $('#milestones').innerHTML = p.milestones.map(m => `<li><b>${esc(m.when)}</b><span>${esc(m.text)}</span></li>`).join('');
+    $('#history').textContent = p.history;
+    $('#offLinks').innerHTML = p.links.map(l => `<a class="offlink" href="${l.href}" target="_blank" rel="noopener">${esc(l.label)}</a>`).join('<br>');
+  }
+
+  /* ================= navigation ================= */
+  function renderSteps(){
+    $$('.stepbtn').forEach(b => {
+      const n = +b.dataset.step;
+      if(n === S.step) b.setAttribute('aria-current','step'); else b.removeAttribute('aria-current');
+      b.classList.toggle('done', n < S.step);
+    });
+    $$('.panel').forEach(pn => pn.classList.toggle('active', pn.id === 'panel-' + S.step));
+    $('#stepMobileLabel').textContent = `Step ${S.step} of 4: ${STEP_NAMES[S.step-1]}`;
+    $$('.step-mobile .bar span').forEach((s,i) => s.classList.toggle('on', i < S.step));
+    $('#stepCount').textContent = `Step ${S.step} of 4: ${STEP_NAMES[S.step-1]}`;
+    $('#backBtn').disabled = S.step === 1;
+    $('#nextBtn').textContent = S.step === 4 ? 'Try another student' : `Next: ${STEP_NAMES[S.step]}`;
+  }
+  function goStep(n){
+    S.step = Math.min(4, Math.max(1, n));
+    renderSteps();
+    const top = $('#plannerWrap').getBoundingClientRect().top + window.scrollY - 72;
+    if(Math.abs(window.scrollY - top) > 240) window.scrollTo({top, behavior: reduced ? 'auto' : 'smooth'});
+  }
+  function renderAll(){ setStageClass(); renderProfiles(); renderRecord(); renderExplore(); renderPlan(); renderSteps(); renderUnlock(); fillUpArea(); }
+
+  $$('.stepbtn').forEach(b => b.addEventListener('click', () => goStep(+b.dataset.step)));
+  $('#backBtn').addEventListener('click', () => goStep(S.step - 1));
+  $('#nextBtn').addEventListener('click', () => goStep(S.step === 4 ? 1 : S.step + 1));
+
+  /* ================= planner events ================= */
+  $('#plannerWrap').addEventListener('click', e => {
+    const t = e.target.closest('button'); if(!t) return;
+    const ds = t.dataset;
+    if(ds.profile){
+      if(S.profile !== ds.profile){
+        S.profile = ds.profile; renderAll();
+        toast(`Now showing ${P().name}, ${P().tag}. Achievements, options and tasks have switched over.`);
+      }
+      return;
+    }
+    if(ds.filter){ D().filter = ds.filter; renderRecord(); return; }
+    if(ds.attach){ attachProof(ds.attach); return; }
+    if(ds.view){ openProof(ds.view); return; }
+    if(ds.remove){
+      const d = D(), idx = d.records.findIndex(r => r.id === ds.remove), r = d.records[idx];
+      d.records.splice(idx, 1);
+      lastRemoved = {profile:S.profile, record:r, idx};
+      renderAll();
+      toast(`Removed "${r.title}".`, 'Undo', () => {
+        if(!lastRemoved) return;
+        const lr = lastRemoved; lastRemoved = null;
+        S.data[lr.profile].records.splice(lr.idx, 0, lr.record);
+        renderAll(); flash(lr.record.id);
+        toast(`"${lr.record.title}" is back.`);
+      });
+      return;
+    }
+    if(ds.opt){ D().sel = ds.opt; renderExplore(); return; }
+    if(ds.toggleSl){ toggleShortlist(ds.toggleSl); return; }
+    if(ds.goto){ goStep(+ds.goto); return; }
+  });
+  $('#plannerWrap').addEventListener('change', e => {
+    const t = e.target;
+    if(t.dataset.cmp){
+      const d = D();
+      if(t.checked){
+        if(d.compare.length >= 2){ t.checked = false; toast('You can compare two at a time. Untick one first.'); return; }
+        d.compare.push(t.dataset.cmp);
+      } else d.compare = d.compare.filter(x => x !== t.dataset.cmp);
+      renderShortlist(); return;
+    }
+    if(t.dataset.task){
+      const d = D(), id = t.dataset.task;
+      if(t.dataset.rid){
+        const r = d.records.find(x => x.id === t.dataset.rid);
+        r.proof = t.checked ? 'attached' : 'missing';
+        if(t.checked) countUpload();
+        renderAll();
+        toast(t.checked ? `Sample proof attached to "${r.title}".` : `"${r.title}" is marked as missing proof again.`);
+      } else {
+        if(t.checked){ if(!d.done.includes(id)) d.done.push(id); } else d.done = d.done.filter(x => x !== id);
+        renderPlan();
+        const left = taskList().filter(x => !x.done).length;
+        if(t.checked) toast(left ? `Done. ${left} task${left===1?'':'s'} to go.` : 'All tasks done. Preparation is up to date.');
+      }
+      const again = document.getElementById('tk-' + id); if(again) again.focus();
+    }
+  });
+  $('#resetBtn').addEventListener('click', () => {
+    S.data[S.profile] = freshData(S.profile); lastRemoved = null; renderAll();
+    toast(`${P().name}'s sample has been reset.`);
+  });
+
+  /* ================= dialogs ================= */
+  let opener = null;
+  function openDlg(d){ opener = document.activeElement; d.showModal(); }
+  $$('dialog').forEach(d => {
+    d.addEventListener('close', () => { if(opener && document.contains(opener)) opener.focus(); });
+    d.addEventListener('click', e => { if(e.target === d || e.target.closest('[data-close]')) d.close(); });
+  });
+  $('#signToPlanner').addEventListener('click', () => { opener = null; $('#signDlg').close(); });
+
+  const addDlg = $('#addDlg');
+  $('#openAdd').addEventListener('click', () => {
+    $('#addForm').reset(); $('#aTitleErr').style.display = 'none';
+    $('#aTitle').placeholder = P().addHint;
+    $('#aArea').innerHTML = Object.entries(P().areas).map(([k,l]) => `<option value="${k}">${esc(l)}</option>`).join('');
+    if(D().filter !== 'all') $('#aArea').value = D().filter;
+    openDlg(addDlg); $('#aTitle').focus();
+  });
+  $('#addForm').addEventListener('submit', e => {
+    e.preventDefault();
+    const title = $('#aTitle').value.trim();
+    if(!title){ $('#aTitleErr').style.display = 'block'; $('#aTitle').focus(); return; }
+    const proof = $('#addForm').querySelector('input[name=aProof]:checked').value;
+    const r = {id:'n'+(nextId++), title, note:'', areas:[$('#aArea').value], year:+$('#aYear').value, kind:$('#aKind').value, proof, proofType:'Certificate', needsProof: proof==='missing'};
+    D().records.push(r);
+    if(proof === 'attached') countUpload();
+    if(D().filter !== 'all' && !r.areas.includes(D().filter)) D().filter = 'all';
+    addDlg.close(); renderAll(); flash(r.id);
+    toast(proof==='missing' ? `Added "${title}". Finding its proof is now a task in the plan.` : `Added "${title}" with sample proof.`);
+  });
+
+  function openProof(id){
+    const r = D().records.find(x => x.id === id), p = P();
+    $('#proofBody').innerHTML = `
+      <div class="cert"><span class="wm" aria-hidden="true">SAMPLE</span>
+        <p class="org">${esc(r.proofType || 'Certificate')}</p>
+        <h4>${esc(r.title)}</h4>
+        <p class="to">Presented to ${esc(p.name)}, ${r.year}</p>
+      </div>
+      <p class="small muted" style="margin-top:12px">A placeholder for the demo. In the real planner, this is where the photo or PDF you saved would appear.</p>`;
+    openDlg($('#proofDlg'));
+  }
+
+  function openCheckin(){
+    const p = P(), d = D(), tasks = taskList();
+    const miss = d.records.filter(r => r.proof === 'missing');
+    const sl = d.shortlist.map(id => p.options.find(o => o.id === id).name);
+    const next = tasks.find(t => !t.done);
+    const type = p.stage === 'primary' ? 'a junior check-in (Pro includes one every two months)' : 'a senior check-in (Elite includes one every month)';
+    $('#ckSub').textContent = `For ${p.name}, ${p.tag}. An example of ${type}, using the sample planner as it stands.`;
+    $('#ckAgenda').innerHTML = `
+      <li><span><b>Look through the record</b><span>${d.records.length} achievements so far${miss.length ? `, with proof still missing for ${esc(miss[0].title)}${miss.length>1?` and ${miss.length-1} more`:''}` : ', all with proof attached'}.</span></span></li>
+      <li><span><b>Talk through the shortlist</b><span>${sl.length ? `${esc(sl.join(', '))}. Why each is there and what to check on the official websites.` : 'Nothing shortlisted yet, so the conversation starts with which areas feel strongest and which options to explore.'}</span></span></li>
+      <li><span><b>Agree the next task</b><span>One clear thing to do before the next check-in.</span></span></li>`;
+    $('#ckTake').innerHTML = `<b>Sample takeaway:</b> ${next ? esc(next.text) + '.' : 'Every task is done. Keep adding achievements as they happen.'} ${sl.length ? 'Bring what you find on the official websites to the next check-in.' : 'Add one or two options to the shortlist before next time.'}`;
+    openDlg($('#ckDlg'));
+  }
+  document.addEventListener('click', e => {
+    if(e.target.closest('[data-open-checkin]')) openCheckin();
+    const s = e.target.closest('[data-signup]');
+    if(s){ $('#signPlan').textContent = s.dataset.signup; openDlg($('#signDlg')); }
+  });
+
+  /* ================= tuition directory ================= */
+  // Listed from public information (centre websites and published round-ups). Not a ranking. No partners yet.
+  const C = (name, site, subjects, levels, branches) => ({name, site, subjects, levels, branches});
+  const CENTRES = [
+    C('EduFirst Learning Centre','edufirst.com.sg',['English','Maths','Science','Chinese','Physics','Chemistry','Biology'],['Primary','Secondary'],{North:['Woodlands','Yishun','Sembawang'],'North-East':['Hougang','Punggol','Sengkang','Ang Mo Kio'],East:['Bedok','Tampines','Pasir Ris'],West:['Jurong East','Jurong West','Bukit Panjang','Yew Tee'],Central:['Toa Payoh','Bukit Timah','Aljunied']}),
+    C('Mind Stretcher','mindstretcher.com',['English','Maths','Science','Chinese'],['Primary'],{North:['Woodlands','Yishun','Sembawang'],'North-East':['Hougang','Punggol','Sengkang','Seletar'],East:['Tampines','Simei','Marine Parade'],West:['Bukit Batok','Clementi','Jurong West','Bukit Panjang','Yew Tee'],Central:['Bishan','Novena','Toa Payoh']}),
+    C('Stalford Learning Centre','stalford.edu.sg',['English','Maths','Science','Chinese','Physics','Chemistry','Biology','Economics','General Paper'],['Primary','Secondary','JC'],{North:['Admiralty','Yishun (Northpoint City)'],'North-East':['Ang Mo Kio','Punggol','Sengkang'],East:['Bedok','Tampines','Pasir Ris','Eastpoint'],West:['Jurong Point','Bukit Panjang','Choa Chu Kang','Yew Tee'],Central:['Tiong Bahru']}),
+    C('AGrader Learning Centre','agrader.sg',['English','Maths','Science','Chinese'],['Primary','Secondary'],{North:['Admiralty','Sembawang','Yishun'],'North-East':['Ang Mo Kio','Hougang','Kovan','Sengkang','Serangoon'],East:['Bedok Reservoir','Marine Parade','Pasir Ris','Tampines'],West:['Boon Lay','Choa Chu Kang','Clementi','Jurong East'],Central:['Tiong Bahru']}),
+    C('Mavis Tutorial Centre','mavistutorial.com',['English','Maths','Science','Chinese','Physics','Chemistry'],['Primary','Secondary'],{North:['Woodlands'],'North-East':['Ang Mo Kio','Sengkang','Kovan','Punggol','Seletar'],East:['Bedok','Pasir Ris','Tampines'],West:['Jurong East','Jurong Point','Choa Chu Kang']}),
+    C('Matrix Math','matrixmath.sg',['Maths'],['Primary','Secondary'],{North:['Yishun'],'North-East':['Ang Mo Kio','Punggol'],East:['Marine Parade','Bedok'],West:['Bukit Batok','Clementi','Jurong East','Bukit Panjang'],Central:['Bukit Timah']}),
+    C('Raymond Math and Science Studio','rmss.com.sg',['English','Maths','Science','Chinese','Physics','Chemistry','Biology','Economics'],['Primary','Secondary','JC'],{Central:['Bishan'],East:['Marine Parade','Tampines'],'North-East':['Punggol','Kovan'],West:['Jurong']}),
+    C('The Learning Lab','thelearninglab.com.sg',['English','Maths','Science','Physics','Chemistry','Biology','Economics','General Paper','Literature'],['Primary','Secondary','JC'],{Central:['Novena (United Square)','Paya Lebar'],East:['Tampines'],West:['Jurong East (JEM)','Choa Chu Kang']}),
+    C("Learners' Lodge",'learnerslodge.com.sg',['Maths','Physics','Chemistry','Biology','Economics','General Paper','Literature'],['JC'],{Central:['Bishan','Bukit Timah'],East:['Tampines'],'North-East':['Kovan'],West:['Jurong']}),
+    C('Zenith Education Studio','zenitheducationstudio.com',['English','Maths','Science','Physics','Chemistry','Biology','Economics','General Paper'],['Primary','Secondary','JC'],{Central:['Novena','Bukit Timah','Bishan','Paya Lebar'],East:['Tampines'],West:['Jurong']}),
+    C('Edugrove Mandarin Enrichment Centre','edugrove.com.sg',['Chinese'],['Primary','Secondary'],{East:['Pasir Ris','Tampines','East Coast'],'North-East':['Ang Mo Kio','Sengkang'],West:['Choa Chu Kang'],Central:['HarbourFront','Woodleigh']}),
+    C('Ace Scorers Tuition','acescorers.com.sg',['Economics'],['Secondary','JC'],{North:['Woodlands'],West:['Bukit Batok'],'North-East':['Kovan']}),
+    C('Economics Cafe','economicscafe.com.sg',['Economics'],['JC'],{Central:['Bishan'],East:['Tampines']}),
+    C('EconsLab by Mr Fok','jceconomics.com',['Economics'],['JC'],{Central:['Bukit Timah','Bishan'],East:['Tampines']}),
+    C('Economics Focus','economicsfocus.com.sg',['Economics'],['JC'],{Central:['Bukit Timah']}),
+    C('Quintessential Education','qeducation.sg',['Economics','General Paper'],['JC'],{Central:['Orchard']}),
+    C('Ace GP Tuition','acegptuition.com.sg',['General Paper'],['JC'],{Central:['Bishan']}),
+    C('The Physics and Math Café','pmc.sg',['Maths','Physics','Chemistry'],['JC'],{Central:['Toa Payoh','Novena','Paya Lebar']}),
+    C('SG Physics, Chemistry and Math','sgphysicstuition.com',['Physics','Chemistry','Maths'],['Secondary','JC'],{Central:['Bishan','Bukit Timah'],West:['Jurong East']}),
+    C('Making Sense','makingsense-sg.com',['Chemistry'],['JC'],{Central:['Bugis','Beauty World']}),
+    C('The Pique Lab','thepiquelab.com',['Science','Maths'],['Primary','Secondary'],{Central:['Selegie']}),
+    C('Heuristics Science','heuristicscience.com.sg',['Science'],['Primary','Secondary'],{Central:['Goldhill']}),
+    C('NickleBee Tutors','nicklebeetutors.com',['Maths'],['Primary'],{Central:['Bishan','Bukit Timah'],'North-East':['Sengkang']}),
+    C('British Council','britishcouncil.sg',['English'],['Primary','Secondary'],{Central:['Napier Road','Toa Payoh']}),
+    C('Academia','academia.com.sg',['English'],['Primary','Secondary','JC'],{Central:['Sin Ming']}),
+    C('The Right Word','therightword.com.sg',['English'],['Primary','Secondary','JC'],{Central:['Upper Thomson']}),
+    C('McKaylan Tuition','mckaylan.com',['English'],['Primary','Secondary'],{Central:['Bishan']}),
+    C('Berries','berriesworld.com',['Chinese'],['Primary'],{Central:['Bishan','Toa Payoh','Bukit Timah','River Valley']}),
+    C('Writers Studio','writerstudio.com.sg',['English'],['Primary','Secondary'],{'North-East':['Hougang'],Central:['Beauty World']}),
+    C('Prologue English','yourprologue.sg',['English'],['Primary','Secondary'],{East:['Katong'],Central:['Beauty World']}),
+    C('Phi Learning','philearning.sg',['English'],['Primary','Secondary'],{East:['Parkway Parade']}),
+    C('Miracle Math Tuition Centre','miraclemath.sg',['Maths'],['Primary','Secondary'],{East:['Bedok','Tampines']}),
+    C('Chen Higher Chinese','chenhigherchinese.sg',['Chinese'],['Primary','Secondary'],{'North-East':['Ang Mo Kio']}),
+    C('My LuLaoShi','mylulaoshi.blogspot.com',['Chinese'],['Primary','Secondary'],{West:['Bukit Batok']}),
+    C('The Science Academy','thescienceacademy.sg',['Science','Maths'],['Primary','Secondary','JC'],{West:['Bukit Batok']})
+  ];
+  let dirShowAll = false;
+  function renderDir(){
+    const subj = $('#fSubj').value, loc = $('#fLoc').value, lvl = $('#fLvl').value;
+    const list = CENTRES.filter(c => c.branches[loc] && c.subjects.includes(subj) && (lvl === 'any' || c.levels.includes(lvl)))
+      .sort((a,b) => (a.subjects.length <= 2 ? 0 : 1) - (b.subjects.length <= 2 ? 0 : 1) || a.name.localeCompare(b.name));
+    const shown = dirShowAll ? list : list.slice(0, 10);
+    const lvlTxt = lvl === 'any' ? '' : ` at ${lvl} level`;
+    const free = `<li class="dir-item">
+        <span class="dir-ico" aria-hidden="true">🏫</span>
+        <div><h3>Your own school first</h3>
+          <div class="labels"><span class="label l-ok">Free</span><span class="label l-ok">At school</span></div>
+          <p class="whyline">Ask the ${esc(subj)} teacher about consultation slots, supplementary lessons or revision clinics before paying for a class.</p></div>
+        <span class="cost">Free</span></li>`;
+    const where = loc === 'Central' ? 'Central' : 'the ' + loc;
+    $('#dirCount').textContent = list.length ? `${list.length} centre${list.length>1?'s':''} teach${list.length>1?'':'es'} ${subj}${lvlTxt} with a branch in ${where}.` : '';
+    $('#dirList').innerHTML = free + (list.length ? shown.map(c => {
+      const why = `${c.subjects.length <= 2 ? 'Specialises in' : 'Teaches'} ${subj}${lvlTxt}, with ${c.branches[loc].length > 1 ? 'branches' : 'a branch'} in ${c.branches[loc].join(', ')}.`;
+      return `<li class="dir-item">
+        <span class="dir-ico paid" aria-hidden="true">📘</span>
+        <div>
+          <h3>${esc(c.name)}</h3>
+          <div class="labels">${c.levels.map(l => `<span class="label l-plain">${l}</span>`).join('')}</div>
+          <div class="subj">${c.subjects.map(x => `<span class="${x===subj?'hit':''}">${esc(x)}</span>`).join('')}</div>
+          <p class="whyline">${esc(why)}</p>
+        </div>
+        <a class="site" href="https://${c.site}" target="_blank" rel="noopener">Visit website</a>
+      </li>`;}).join('') : `<li class="empty">No centres in this list teach ${esc(subj)}${esc(lvlTxt)} in ${esc(where)}. Try another area or level.</li>`);
+    const more = $('#dirMore');
+    more.hidden = list.length <= 10;
+    more.textContent = dirShowAll ? 'Show fewer' : `Show all ${list.length}`;
+  }
+  ['#fSubj','#fLoc','#fLvl'].forEach(sel => $(sel).addEventListener('change', () => { dirShowAll = false; renderDir(); }));
+  $('#dirMore').addEventListener('click', () => { dirShowAll = !dirShowAll; renderDir(); });
+
+  /* ================= uploads and notes unlock ================= */
+  function countUpload(){
+    const before = uploads; uploads++;
+    if(before < UNLOCK_AT && uploads >= UNLOCK_AT) setTimeout(() => toast('Notes library unlocked. Have a look further down the page.'), 3300);
+  }
+  function unlockHTML(){
+    const n = Math.min(uploads, UNLOCK_AT);
+    return uploads >= UNLOCK_AT
+      ? `<b>Notes library unlocked.</b> <a href="#notes" class="linklike">Open it</a>`
+      : `<b>${n} of ${UNLOCK_AT} uploads</b> towards the free notes library<div class="bar"><span style="width:${n/UNLOCK_AT*100}%"></span></div>`;
+  }
+  function renderUnlock(){
+    $('#unlockBox').innerHTML = unlockHTML();
+    const open = uploads >= UNLOCK_AT;
+    $('#notesLock').hidden = open; $('#notesOpen').hidden = !open;
+    if(!open) $('#unlockBox2').innerHTML = unlockHTML();
+    else renderNotes();
+  }
+
+  /* ================= upload reader (runs in the browser) ================= */
+  const TESS = {
+    script:'https://cdn.jsdelivr.net/npm/tesseract.js@5.1.1/dist/tesseract.min.js',
+    workerPath:'https://cdn.jsdelivr.net/npm/tesseract.js@5.1.1/dist/worker.min.js',
+    corePath:'https://cdn.jsdelivr.net/npm/tesseract.js-core@5.1.1',
+    langPath:'https://cdn.jsdelivr.net/npm/@tesseract.js-data/eng@1.0.0/4.0.0_best_int'
+  };
+  let tessReady = null, upBusy = false;
+  function loadTess(){
+    if(tessReady) return tessReady;
+    tessReady = new Promise((res, rej) => {
+      if(window.Tesseract) return res(window.Tesseract);
+      const sc = document.createElement('script'); sc.src = TESS.script; sc.async = true;
+      sc.onload = () => res(window.Tesseract); sc.onerror = () => { tessReady = null; rej(new Error('load')); };
+      document.head.appendChild(sc);
+    });
+    return tessReady;
+  }
+  const AREA_WORDS = {
+    stem:/robot|coding|code|stem|infocomm|tech/i, maths:/math|olympiad/i, lead:/lead|captain|prefect|president|monitor|council/i,
+    sports:/sport|wushu|netball|floorball|games|athlet|swim|football|badminton/i, arts:/art|music|choir|band|dance|drama/i,
+    debate:/debat|speak|model un|oratory/i, science:/science|biolog|chemis|physic/i, service:/volunt|service|communit|tutor/i,
+    eng:/engineer|hackathon|robot|project/i, work:/intern|work/i
+  };
+  function guessArea(text){
+    const keys = Object.keys(P().areas);
+    return keys.find(k => AREA_WORDS[k] && AREA_WORDS[k].test(text)) || keys[0];
+  }
+  function fillUpArea(){
+    const sel = $('#upArea'), cur = sel.value;
+    sel.innerHTML = Object.entries(P().areas).map(([k,l]) => `<option value="${k}">${esc(l)}</option>`).join('');
+    if(P().areas[cur]) sel.value = cur;
+  }
+  function setProg(pct){ const b = $('#upProg'); b.style.display = pct == null ? 'none' : 'block'; b.firstElementChild.style.width = (pct||0) + '%'; }
+  function sampleCanvas(){
+    const p = P(), cv = document.createElement('canvas'); cv.width = 1000; cv.height = 680;
+    const g = cv.getContext('2d');
+    g.fillStyle = '#FFFDF4'; g.fillRect(0,0,1000,680);
+    g.strokeStyle = '#C9A93B'; g.lineWidth = 10; g.strokeRect(24,24,952,632);
+    g.fillStyle = '#172B4D'; g.textAlign = 'center';
+    const sample = {primary:['Gold Award','National Junior Robotics Challenge 2026','Organised by the Youth Robotics Council'], secondary:['Best Speaker','Inter-school Debate Championship 2026','Organised by the Schools Debate Association'], post:['First Prize','Smart Campus Hackathon 2025','Organised by the Engineering Students Society']}[p.stage];
+    g.font = 'bold 54px Georgia, serif'; g.fillText('CERTIFICATE OF ACHIEVEMENT', 500, 150);
+    g.font = '32px Arial, sans-serif'; g.fillText('This is awarded to', 500, 240);
+    g.font = 'bold 52px Georgia, serif'; g.fillText(p.name, 500, 320);
+    g.font = '36px Arial, sans-serif'; g.fillText(sample[0] + ', ' + sample[1], 500, 410);
+    g.font = '28px Arial, sans-serif'; g.fillText(sample[2], 500, 480);
+    g.font = 'bold 26px Arial, sans-serif'; g.fillStyle = '#E88470'; g.fillText('SAMPLE FOR DEMO', 500, 590);
+    return cv;
+  }
+  async function readImage(src, previewURL){
+    if(upBusy) return; upBusy = true;
+    $('#upResult').classList.remove('show');
+    $('#upStatus').textContent = 'Loading the text reader. The first time takes a few seconds.';
+    setProg(5);
+    try{
+      const T = await loadTess();
+      const worker = await T.createWorker('eng', 1, {workerPath:TESS.workerPath, corePath:TESS.corePath, langPath:TESS.langPath,
+        logger: m => { if(m.status === 'recognizing text'){ $('#upStatus').textContent = 'Reading the certificate...'; setProg(30 + m.progress * 70); } else setProg(15); }});
+      const { data } = await worker.recognize(src);
+      await worker.terminate();
+      showResult(data.text || '', data.confidence || 0, previewURL);
+    } catch(err){
+      setProg(null);
+      $('#upStatus').textContent = "The text reader couldn't load, possibly because you're offline. You can still add the achievement with the Add an achievement button.";
+    }
+    upBusy = false;
+  }
+  function showResult(text, conf, previewURL){
+    setProg(null);
+    const p = P();
+    const lines = text.split('\n').map(l => l.trim()).filter(l => l.length > 3);
+    const yearM = text.match(/20[1-3]\d/);
+    const awardRe = /(gold|silver|bronze|merit|distinction|first|second|third|1st|2nd|3rd|prize|award|champion|best)/i;
+    const eventRe = /(competition|championship|olympiad|challenge|hackathon|festival|award|games|contest)/i;
+    const cand = lines.filter(l => !/certificate|awarded to|presented to|organis|organiz|sample for demo/i.test(l) && !new RegExp('^' + p.name + '$', 'i').test(l));
+    let title = cand.find(l => awardRe.test(l) && eventRe.test(l)) || cand.find(l => eventRe.test(l)) || cand[0] || '';
+    title = title.replace(/[|_~]/g, '').replace(/\s+/g, ' ').trim();
+    const hasName = p.name.split(' ').some(w => new RegExp(w, 'i').test(text));
+    const org = lines.find(l => /organis|organiz|presented by|council|association|society|ministry|school/i.test(l));
+    const fb = [
+      [!!title, title ? 'We found what the award is for.' : "We couldn't find a clear award title. Type it in below."],
+      [!!yearM, yearM ? `The year is readable (${yearM[0]}).` : 'No year found. Add it so schools can see when this happened.'],
+      [hasName, hasName ? `${p.name}'s name appears on it.` : `We couldn't see ${p.name}'s name. Check it's the right certificate.`],
+      [!!org, org ? 'The organiser is named, which makes it easier to verify.' : 'No organiser found. A letter or results list can help.'],
+      [conf >= 60, conf >= 60 ? 'The photo is clear enough to read.' : 'The photo looks blurry or dark. Retake it in good light if you can.']
+    ];
+    if(awardRe.test(title)) fb.push([true, 'It shows a placing or award, which is worth leading with.']);
+    $('#upFeedback').innerHTML = fb.map(([ok,t]) => `<li><span class="mk ${ok?'y':'n'}" aria-hidden="true">${ok?'✓':'!'}</span><span>${esc(t)}</span></li>`).join('');
+    $('#upTitle').value = title;
+    fillUpArea(); $('#upArea').value = guessArea(text);
+    if(yearM && [...$('#upYear').options].some(o => o.value === yearM[0])) $('#upYear').value = yearM[0];
+    $('#upThumb').src = previewURL;
+    $('#upStatus').textContent = 'Done. Check the details, then add it to the record.';
+    $('#upResult').classList.add('show');
+  }
+  $('#upSample').addEventListener('click', () => { const cv = sampleCanvas(); readImage(cv, cv.toDataURL('image/png')); });
+  $('#upFile').addEventListener('change', e => {
+    const f = e.target.files[0]; if(!f) return;
+    if(!/^image\//.test(f.type)){ $('#upStatus').textContent = 'Choose a photo (JPG, PNG or WebP).'; return; }
+    if(f.size > 8 * 1024 * 1024){ $('#upStatus').textContent = 'That photo is over 8 MB. Try a smaller one.'; return; }
+    const url = URL.createObjectURL(f); readImage(url, url); e.target.value = '';
+  });
+  $('#upAdd').addEventListener('click', () => {
+    const title = $('#upTitle').value.trim();
+    if(!title){ $('#upStatus').textContent = 'Add a title before saving.'; $('#upTitle').focus(); return; }
+    const r = {id:'n'+(nextId++), title, note:'Added from an upload', areas:[$('#upArea').value], year:+$('#upYear').value, kind:/gold|silver|bronze|merit|prize|award|place|best|champion|first|second|third/i.test(title) ? 'award' : 'activity', proof:'attached', proofType:'Uploaded photo', needsProof:false};
+    D().records.push(r); D().filter = 'all'; countUpload();
+    $('#upResult').classList.remove('show'); $('#upStatus').textContent = '';
+    renderAll(); flash(r.id);
+    toast(`Added "${title}" with its photo as proof.`);
+  });
+  $('#upCancel').addEventListener('click', () => { $('#upResult').classList.remove('show'); $('#upStatus').textContent = 'Discarded. Nothing was saved.'; });
+
+  /* ================= notes library (sample notes) ================= */
+  const NOTES = [
+    {t:'Fractions word problems: five patterns to spot', lvl:'Primary', subj:'Maths', by:'Shared by a P6 student', body:'1. Fraction of a remainder: draw the whole, take the first part, then a fraction of what is left.\n2. Before and after: keep the unchanged quantity the same in both models.\n3. Equal fractions: make numerators the same to compare parts.\n4. Total unchanged: transfer between two people keeps the total fixed.\n5. Always label your model and check the answer against the question.'},
+    {t:'Energy conversion mind map', lvl:'Primary', subj:'Science', by:'Shared by a P6 student', body:'Energy cannot be created or destroyed, only converted from one form to another.\nTorch: chemical potential energy (battery) to electrical energy to light and heat energy.\nFalling ball: gravitational potential energy to kinetic energy, some lost as sound and heat.\nIn answers, name every form in the correct order.'},
+    {t:'Composition openers that work', lvl:'Secondary', subj:'English', by:'Shared by a Sec 2 student', body:'Start with action: "The door slammed before I could explain."\nStart with dialogue: "You did what?" Mum stared at the broken vase.\nStart with a question: Have you ever wished you could take something back?\nKeep the opener short, then set the scene in the next two sentences.'},
+    {t:'Mole concept cheat sheet', lvl:'Secondary', subj:'Chemistry', by:'Shared by a Sec 3 student', body:'Number of moles = mass / molar mass\nConcentration (mol/dm3) = moles / volume (dm3)\nVolume of gas at r.t.p. = moles x 24 dm3\nUse the mole ratio from the balanced equation to move between substances.\nAlways convert cm3 to dm3 by dividing by 1000.'},
+    {t:'Kinematics formula sheet', lvl:'Secondary', subj:'Physics', by:'Shared by a Sec 4 student', body:'v = u + at\ns = ut + 1/2 at^2\nv^2 = u^2 + 2as\nAverage speed = total distance / total time\nGradient of a distance-time graph = speed. Gradient of a speed-time graph = acceleration. Area under a speed-time graph = distance.'},
+    {t:'Market failure: one-page summary', lvl:'JC', subj:'Economics', by:'Shared by a JC1 student', body:'Market failure: the free market allocates resources inefficiently.\nSources: externalities, public goods, information failure, market dominance.\nNegative externality: MSC > MPC, so the market over-produces.\nPolicies: taxes, subsidies, regulation, provision, information campaigns. Always weigh effectiveness and limitations.'},
+    {t:'GP essay planning template', lvl:'JC', subj:'General Paper', by:'Shared by a JC2 student', body:'Introduction: define key terms, set the scope, give a clear stand.\nBody paragraphs: point, explanation, example, link back to the question.\nCounter-argument: present it fairly, then rebut it.\nConclusion: return to the stand and widen the significance.\nUse specific, recent examples from Singapore and abroad.'},
+    {t:'Cell signalling in three steps', lvl:'JC', subj:'Biology', by:'Shared by a JC1 student', body:'Reception: a signal molecule binds to a specific receptor.\nTransduction: the signal is relayed and often amplified, for example by second messengers.\nResponse: the cell changes, such as switching genes on or activating enzymes.\nIn answers, name the receptor type and link each step to the outcome.'}
+  ];
+  const nSubjSel = $('#nSubj');
+  nSubjSel.innerHTML += [...new Set(NOTES.map(n => n.subj))].map(x => `<option value="${x}">${x}</option>`).join('');
+  function renderNotes(){
+    const lvl = $('#nLvl').value, subj = nSubjSel.value;
+    const list = NOTES.filter(n => (lvl==='any' || n.lvl===lvl) && (subj==='any' || n.subj===subj));
+    $('#notesList').innerHTML = list.length ? list.map((n,i) => `<li class="note">
+        <span class="note-ico" aria-hidden="true">📝</span>
+        <div><h3>${esc(n.t)}</h3><div class="meta"><span class="label l-sample">Sample note</span><span class="label l-plain">${n.lvl}</span><span class="label l-plain">${esc(n.subj)}</span><span class="small muted">${esc(n.by)}</span></div></div>
+        <button type="button" class="btn btn-ghost btn-sm" data-note="${NOTES.indexOf(n)}">Download</button>
+      </li>`).join('') : '<li class="empty">No sample notes for that combination yet.</li>';
+  }
+  ['#nLvl','#nSubj'].forEach(sel => $(sel).addEventListener('change', renderNotes));
+  $('#notesList').addEventListener('click', e => {
+    const b = e.target.closest('[data-note]'); if(!b) return;
+    const n = NOTES[+b.dataset.note];
+    const txt = `${n.t}\n${n.lvl}, ${n.subj}. ${n.by}.\nSample note from the OpenJio demo.\n\n${n.body}\n`;
+    const url = URL.createObjectURL(new Blob([txt], {type:'text/plain'}));
+    const a = document.createElement('a'); a.href = url; a.download = n.t.replace(/[^a-z0-9]+/gi,'-').toLowerCase() + '.txt';
+    document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(url), 1000);
+    toast(`Downloaded "${n.t}".`);
+  });
+
+  /* ================= pricing helper ================= */
+  const HW = {
+    organise:{plan:'plan-free', text:'<strong>Free</strong> fits. It keeps achievements, reminders and a basic school-fit scan in one place.'},
+    moments:{plan:'plan-pro', text:'<strong>Pro</strong> fits. It adds a junior check-in every two months, plus automatic reading of every upload and the full school-fit scan.'},
+    regular:{plan:'plan-elite', text:'<strong>Elite</strong> fits. It includes a senior check-in every month with former coaches and educators.'},
+    once:{plan:'plan-once', text:"The <strong>one-hour consultation</strong> fits. It's S$30, with no subscription."}
+  };
+  $('#hwOpts').addEventListener('click', e => {
+    const b = e.target.closest('.hw'); if(!b) return;
+    $$('.hw').forEach(x => x.setAttribute('aria-pressed', x === b));
+    const h = HW[b.dataset.hw];
+    $('#hwOut').innerHTML = h.text;
+    $$('.plan, #plan-once').forEach(p => p.classList.toggle('hl', p.id === h.plan));
+  });
+
+  /* ================= nav ================= */
+  const menuBtn = $('#menuBtn'), menu = $('#mobileMenu');
+  function setMenu(open){
+    menuBtn.setAttribute('aria-expanded', open); menu.classList.toggle('open', open);
+    menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  }
+  menuBtn.addEventListener('click', () => setMenu(menuBtn.getAttribute('aria-expanded') !== 'true'));
+  menu.addEventListener('click', e => { if(e.target.closest('a')) setMenu(false); });
+  document.addEventListener('keydown', e => { if(e.key === 'Escape' && menu.classList.contains('open')){ setMenu(false); menuBtn.focus(); } });
+
+  /* ================= hero pile ================= */
+  const pile = $('#pile');
+  function setSorted(on){
+    pile.classList.toggle('sorted', on);
+    $('#btnSort').setAttribute('aria-pressed', on); $('#btnScatter').setAttribute('aria-pressed', !on);
+  }
+  $('#btnSort').addEventListener('click', () => setSorted(true));
+  $('#btnScatter').addEventListener('click', () => setSorted(false));
+  if(reduced) setSorted(true); else setTimeout(() => setSorted(true), 1400);
+
+  renderAll(); renderDir();
+})();
+</script>
+</body>
+</html>
